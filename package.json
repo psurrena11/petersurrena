@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "scss": "^0.2.4"
+    "sass": "^0.2.4"
   },
   "scripts": {
-    "compile:scss": "sass scss/app.scss app.css"
+    "build:scss": "sass scss/app.scss:app.css",
+    "watch:scss": "sass --watch src:dist"
   }
 }
