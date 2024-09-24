@@ -7,7 +7,7 @@ body {
 
 p {
   font-size: 1em;
-  color: #333;
+  color: #333333;
   line-height: 1.5;
   letter-spacing: 1.2;
 }
@@ -29,12 +29,11 @@ header .social {
 header .social a {
   display: inline-block;
   text-decoration: none;
-  color: #333;
+  color: #333333;
 }
 header .social a:hover {
   text-decoration: underline;
 }
-
 main {
   margin: 40px 0;
   text-align: center;

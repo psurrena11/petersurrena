@@ -4,6 +4,6 @@
   },
   "scripts": {
     "build:scss": "sass scss/app.scss:app.css",
-    "watch:scss": "sass --watch src:dist"
+    "watch:scss": "sass --watch scss/app.scss:app.css"
   }
 }
