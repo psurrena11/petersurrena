@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+$black: #01010F;
+$white: #FFFFFF;
 $grey: #333333;
-$mobile: 768px;  
+
+$sp_lg: 40px;
+$sp_md: 20px;
+$sp_sm: 10px;
+
+$bp_mobile: 768px;  
 
 body {
     font-size: 16px;
@@ -11,20 +18,19 @@ body {
         
 p {
     font-size: 1em;
-    color: $grey;
+    color: $black;
     line-height: 1.5;
     letter-spacing: 1.2;
 }
 
-
 header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: $sp_md;
 
     #logo {
         img {
-            width: 125px;
+            width: 145px;
         }
     }
 
@@ -33,7 +39,7 @@ header {
         grid-template-columns: repeat( 2, min-content );
         justify-content: end;
         align-items: center;
-        grid-gap: 40px;
+        grid-gap: $sp_lg;
 
         text-align: right;
         vertical-align: bottom;
@@ -51,8 +57,12 @@ header {
 
 }
 
+#bio {
+    width: 65%;
+}
+
 main {
-    margin: 40px 0;
+    margin: $sp_lg 0;
     text-align: center;
 
     img {
@@ -60,9 +70,7 @@ main {
     }
 }
 
-
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $bp_mobile) {
 
     #social {
         a {
@@ -70,10 +78,13 @@ main {
         }
     }
 
+    #bio {
+        width: 100%;
+    }
+
     main {
         img {
             width: 95%;
         }
     }
-    
 }

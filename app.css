@@ -7,7 +7,7 @@ body {
 
 p {
   font-size: 1em;
-  color: #333333;
+  color: #01010F;
   line-height: 1.5;
   letter-spacing: 1.2;
 }
@@ -18,7 +18,7 @@ header {
   grid-gap: 20px;
 }
 header #logo img {
-  width: 125px;
+  width: 145px;
 }
 header #social {
   display: inline-grid;
@@ -38,6 +38,10 @@ header #social a:hover {
   text-decoration: underline;
 }
 
+#bio {
+  width: 65%;
+}
+
 main {
   margin: 40px 0;
   text-align: center;
@@ -49,6 +53,9 @@ main img {
 @media only screen and (max-width: 768px) {
   #social a {
     font-size: 0.85em;
+  }
+  #bio {
+    width: 100%;
   }
   main img {
     width: 95%;
