@@ -23,6 +23,10 @@ p {
     letter-spacing: 1.2;
 }
 
+a {
+    color: $black;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -67,6 +71,14 @@ main {
         img {
             width: 75%;
         }
+    }
+}
+
+footer {
+    text-align: center;
+
+    p {
+        font-size: 0.65em;
     }
 }
 
