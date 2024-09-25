@@ -17,7 +17,10 @@ header {
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
-header .social {
+header #logo img {
+  width: 125px;
+}
+header #social {
   display: inline-grid;
   grid-template-columns: repeat(2, min-content);
   justify-content: end;
@@ -26,20 +29,30 @@ header .social {
   text-align: right;
   vertical-align: bottom;
 }
-header .social a {
+header #social a {
   display: inline-block;
   text-decoration: none;
   color: #333333;
 }
-header .social a:hover {
+header #social a:hover {
   text-decoration: underline;
 }
+
 main {
   margin: 40px 0;
   text-align: center;
 }
 main img {
   width: 75%;
+}
+
+@media only screen and (max-width: 768px) {
+  #social a {
+    font-size: 0.85em;
+  }
+  main img {
+    width: 95%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
