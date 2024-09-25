@@ -38,15 +38,14 @@ header #social a:hover {
   text-decoration: underline;
 }
 
-#bio {
+main .bio {
   width: 65%;
 }
-
-main {
-  margin: 40px 0;
+main .grid {
   text-align: center;
+  margin: 40px 0;
 }
-main img {
+main .grid img {
   width: 75%;
 }
 

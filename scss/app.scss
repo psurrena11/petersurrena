@@ -57,16 +57,20 @@ header {
 
 }
 
-#bio {
-    width: 65%;
-}
 
 main {
-    margin: $sp_lg 0;
-    text-align: center;
 
-    img {
-        width: 75%;
+    .bio {
+        width: 65%;
+    }
+
+    .grid {
+        text-align: center;
+        margin: $sp_lg 0;
+
+        img {
+            width: 75%;
+        }
     }
 }
 
