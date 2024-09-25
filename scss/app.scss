@@ -46,17 +46,13 @@ header {
         
         a {
             display: inline-block;
-            text-decoration: none;
-            color: $grey;
 
             &:hover {
-                text-decoration: underline;
+                opacity: 0.7;
             }
         }
     }
-
 }
-
 
 main {
 
@@ -77,6 +73,8 @@ main {
 @media only screen and (max-width: $bp_mobile) {
 
     #social {
+        grid-gap: $sp_md;
+
         a {
             font-size: 0.85em;
         }
@@ -87,8 +85,11 @@ main {
     }
 
     main {
-        img {
-            width: 95%;
+
+        .grid {
+            img {
+                width: 95%;
+            }
         }
     }
 }

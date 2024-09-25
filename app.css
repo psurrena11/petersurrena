@@ -31,11 +31,9 @@ header #social {
 }
 header #social a {
   display: inline-block;
-  text-decoration: none;
-  color: #333333;
 }
 header #social a:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
 main .bio {
@@ -50,13 +48,16 @@ main .grid img {
 }
 
 @media only screen and (max-width: 768px) {
+  #social {
+    grid-gap: 20px;
+  }
   #social a {
     font-size: 0.85em;
   }
   #bio {
     width: 100%;
   }
-  main img {
+  main .grid img {
     width: 95%;
   }
 }
