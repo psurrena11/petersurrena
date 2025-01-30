@@ -4,6 +4,8 @@
   },
   "scripts": {
     "build:scss": "sass scss/app.scss:app.css",
-    "watch:scss": "sass --watch scss/app.scss:app.css"
+    "watch:scss": "sass --watch scss/app.scss:app.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }

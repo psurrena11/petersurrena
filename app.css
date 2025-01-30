@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
   font-size: 16px;
@@ -15,19 +16,22 @@ p {
 a {
   color: #01010F;
 }
+a:hover {
+  color: #333333;
+}
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #01010F;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #01010F;
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h3 {
@@ -35,6 +39,32 @@ h3 {
   color: #01010F;
   margin: 0;
   font-weight: 600;
+}
+
+hr {
+  height: 0;
+  border: 1px solid #20D099;
+  margin: 40px 0;
+}
+
+ul {
+  margin: 0 10px;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  position: relative;
+  margin: 5px 0;
+  padding: 0 10px;
+  font-size: 0.875em;
+}
+ul li::before {
+  content: "• ";
+  position: absolute;
+  top: 6px;
+  left: -10px;
+  padding: 0 10px;
+  font-size: 0.5rem;
 }
 
 .wrapper {
@@ -80,7 +110,8 @@ main .grid img {
 }
 
 #project {
-  background-color: #EFEFEF;
+  border-top: 3px solid #20D099;
+  background-color: #F8F8F8;
   padding: 2%;
 }
 #project .grid_base {
@@ -90,6 +121,10 @@ main .grid img {
 }
 #project .grid_base img {
   width: 100%;
+  border: 1px solid #CCCCCC;
+}
+#project .grid_base ul {
+  margin: 0 0 20px;
 }
 #project .h_1x1 {
   grid-template-columns: 1fr 1fr;

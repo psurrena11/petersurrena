@@ -2,12 +2,16 @@
 
 $black: #01010F;
 $white: #FFFFFF;
-$bg-grey: #EFEFEF;
+$bg-grey: #F8F8F8;
+$med-grey: #CCCCCC;
 $grey: #333333;
+$mint: #20D099;
+$mint-light: #E3FAF3;
 
 $sp_lg: 40px;
 $sp_md: 20px;
 $sp_sm: 10px;
+$sp_xsm: 5px;
 
 $max-width: 1024px;
 
@@ -28,20 +32,24 @@ p {
 
 a {
     color: $black;
+
+    &:hover {
+        color: $grey;
+    }
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: $black;
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: $black;
     margin: 0;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 h3 {
@@ -49,6 +57,34 @@ h3 {
     color: $black;
     margin: 0;
     font-weight: 600;
+}
+
+hr {
+    height: 0;
+    border: 1px solid $mint;
+    margin: $sp_lg 0;
+}
+
+ul { 
+    margin: 0 $sp_sm;
+    padding: 0;
+
+    li {
+        list-style: none;
+        position: relative;
+        margin: $sp_xsm 0;
+        padding: 0 $sp_sm;
+        font-size: 0.875em;
+
+        &::before {
+            content: '• ';
+            position: absolute;
+            top: 6px;
+            left: -10px;
+            padding: 0 10px;
+            font-size: 0.5rem;
+        }
+    }
 }
 
 .wrapper {
@@ -106,6 +142,7 @@ main {
 }
 
 #project {
+    border-top: 3px solid $mint;
     background-color: $bg-grey;
     padding: 2%;
 
@@ -116,6 +153,11 @@ main {
 
         img {
             width: 100%;
+            border: 1px solid $med-grey;
+        }
+
+        ul {
+            margin: 0 0 $sp_md;
         }
     }
 
