@@ -2,18 +2,21 @@
 
 $black: #01010F;
 $white: #FFFFFF;
+$bg-grey: #EFEFEF;
 $grey: #333333;
 
 $sp_lg: 40px;
 $sp_md: 20px;
 $sp_sm: 10px;
 
+$max-width: 1024px;
+
 $bp_mobile: 768px;  
 
 body {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
-    padding: 2%;
+    background-color: $white;
 }
         
 p {
@@ -27,10 +30,37 @@ a {
     color: $black;
 }
 
+h1 {
+    font-size: 1.5rem;
+    color: $black;
+    margin: 0;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: $black;
+    margin: 0;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1rem;
+    color: $black;
+    margin: 0;
+    font-weight: 600;
+}
+
+.wrapper {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: $sp_md;
+    padding: 2%;
 
     #logo {
         img {
@@ -62,6 +92,7 @@ main {
 
     .bio {
         width: 65%;
+        padding: 0 2%
     }
 
     .grid {
@@ -71,6 +102,41 @@ main {
         img {
             width: 75%;
         }
+    }
+}
+
+#project {
+    background-color: $bg-grey;
+    padding: 2%;
+
+    .grid_base {
+        display: grid;
+        grid-gap: $sp_lg;
+        margin: $sp_lg 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .h_1x1 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .h_1x2 {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .h_2x1 {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .h_1x3 {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .h_3x1 {
+        grid-template-columns: 3fr 1fr;
     }
 }
 

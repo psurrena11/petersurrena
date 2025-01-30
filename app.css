@@ -2,7 +2,7 @@
 body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  padding: 2%;
+  background-color: #FFFFFF;
 }
 
 p {
@@ -16,10 +16,37 @@ a {
   color: #01010F;
 }
 
+h1 {
+  font-size: 1.5rem;
+  color: #01010F;
+  margin: 0;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #01010F;
+  margin: 0;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #01010F;
+  margin: 0;
+  font-weight: 600;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  padding: 2%;
 }
 header #logo img {
   width: 145px;
@@ -42,6 +69,7 @@ header #social a:hover {
 
 main .bio {
   width: 65%;
+  padding: 0 2%;
 }
 main .grid {
   text-align: center;
@@ -49,6 +77,34 @@ main .grid {
 }
 main .grid img {
   width: 75%;
+}
+
+#project {
+  background-color: #EFEFEF;
+  padding: 2%;
+}
+#project .grid_base {
+  display: grid;
+  grid-gap: 40px;
+  margin: 40px 0;
+}
+#project .grid_base img {
+  width: 100%;
+}
+#project .h_1x1 {
+  grid-template-columns: 1fr 1fr;
+}
+#project .h_1x2 {
+  grid-template-columns: 1fr 2fr;
+}
+#project .h_2x1 {
+  grid-template-columns: 2fr 1fr;
+}
+#project .h_1x3 {
+  grid-template-columns: 1fr 3fr;
+}
+#project .h_3x1 {
+  grid-template-columns: 3fr 1fr;
 }
 
 footer {
