@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   background-color: #FFFFFF;
+  padding: 2%;
 }
 
 p {
@@ -28,17 +29,17 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: #01010F;
+  font-size: 1.375rem;
+  color: #666666;
   margin: 0;
   font-weight: 400;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #01010F;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 hr {
@@ -47,26 +48,45 @@ hr {
   margin: 40px 0;
 }
 
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #CCCCCC;
+}
+section h2 {
+  margin: 0 0 20px;
+}
+
 ul {
-  margin: 0 10px;
+  margin: 0;
   padding: 0;
 }
 ul li {
   list-style: none;
-  position: relative;
-  margin: 5px 0;
-  padding: 0 10px;
-  font-size: 0.875em;
-}
-ul li::before {
-  content: "• ";
-  position: absolute;
-  top: 6px;
-  left: -10px;
-  padding: 0 10px;
-  font-size: 0.5rem;
 }
 
+/*
+ul { 
+    margin: 0 $sp_sm;
+    padding: 0;
+
+    li {
+        list-style: none;
+        position: relative;
+        margin: $sp_xsm 0;
+        padding: 0 $sp_sm;
+        font-size: 0.875em;
+
+        &::before {
+            content: '• ';
+            position: absolute;
+            top: 6px;
+            left: -10px;
+            padding: 0 10px;
+            font-size: 0.5rem;
+        }
+    }
+}
+*/
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
@@ -76,7 +96,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  padding: 2%;
 }
 header #logo img {
   width: 145px;
@@ -109,37 +128,52 @@ main .grid img {
   width: 75%;
 }
 
-#project {
-  border-top: 3px solid #20D099;
-  background-color: #F8F8F8;
-  padding: 2%;
-}
-#project .grid_base {
+.projects {
   display: grid;
   grid-gap: 40px;
-  margin: 40px 0;
 }
-#project .grid_base img {
-  width: 100%;
-  border: 1px solid #CCCCCC;
+
+ul.project_row:nth-last-child {
+  margin: 0;
 }
-#project .grid_base ul {
-  margin: 0 0 20px;
+ul.project_row li.project {
+  display: inline-block;
+  margin: 0 40px 0 0;
+  width: auto;
+  vertical-align: top;
 }
-#project .h_1x1 {
-  grid-template-columns: 1fr 1fr;
+ul.project_row li.project.thumb_one {
+  max-width: 250px;
 }
-#project .h_1x2 {
-  grid-template-columns: 1fr 2fr;
+ul.project_row li.project.thumb_two {
+  max-width: 520px;
 }
-#project .h_2x1 {
-  grid-template-columns: 2fr 1fr;
+ul.project_row li.project.thumb_three {
+  max-width: 770px;
 }
-#project .h_1x3 {
-  grid-template-columns: 1fr 3fr;
+ul.project_row li.project ul.project_thumbs {
+  display: inline-block;
 }
-#project .h_3x1 {
-  grid-template-columns: 3fr 1fr;
+ul.project_row li.project ul.project_thumbs li {
+  display: inline-block;
+}
+ul.project_row li.project ul.project_thumbs li a {
+  text-decoration: none;
+}
+ul.project_row li.project ul.project_thumbs li:last-child {
+  border: 3px red;
+}
+ul.project_row li.project ul.project_thumbs li img {
+  width: auto;
+  max-width: 250px;
+}
+ul.project_row li.project .project_description {
+  display: inline;
+}
+ul.project_row li.project .project_description p {
+  font-size: 0.85em;
+  margin: 5px 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 footer {

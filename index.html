@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peter Surrena</title>
-    <link rel="stylesheet" href="app.css?v1.5.4">
-    <link rel="icon" type="image/x-icon" href="/img/fav.ico">
+	<link rel="icon" type="image/x-icon" href="img/fav.ico">
+    <link rel="stylesheet" href="css/app.css?v1.5.4">
+	
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8B2PHYTL4"></script>
     <script>
@@ -14,7 +15,10 @@
         gtag('js', new Date());
         gtag('config', 'G-E8B2PHYTL4');
     </script>
-
+	
+	<!-- lightbox.js -->
+	
+	<link rel="stylesheet" href="css/lightbox.css">
     <script>
         //console.log('js works');
     </script>
@@ -33,18 +37,109 @@
     </header>
 
     <main>
-        <div class="bio">
-            <p>I design and build data products that solve real business problems and create lasting value.</p>
+       <section>
+        <h2>Print</h2>
+        <div class="projects">
+            <ul class="project_row">
+			
+                <li class="project thumb_three">
+                    <ul class="project_thumbs gallery-item">
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-1_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-1_thumb.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-1_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-1_thumb.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-1_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-1_thumb.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="project_description">
+                        <h3>Subtitle</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
+                    </div>
+                </li>
+				
+                <li class="project thumb_two">
+                    <ul class="project_thumbs gallery-item">
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-2_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-2_thumb.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-2_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-2_thumb.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                
+                    <div class="project_description">
+                        <h3>Subtitle</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="project_row">
+			
+                <li class="project thumb_two">
+                    <ul class="project_thumbs gallery-item">
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-3_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-3_thumb.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/portfolio/thumbs/fohl-3_thumb.png" data-lightbox="gallery">
+                                <img src="img/portfolio/thumbs/fohl-3_thumb.png" alt="">
+                            </a>
+                        </li>
+                 
+                    </ul>
+                    <div class="project_description">
+                        <h3>Subtitle</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
+                    </div>
+                </li>
+				
+                <li class="project thumb_one">
+                    <ul class="project_thumbs">
+                        <li>
+                            <a href="#">
+                                <img src="img/portfolio/thumbs/fohl-1_thumb.png" alt="">
+                            </a>
+                        </li>
+                      
+                    </ul>
+                
+                    <div class="project_description">
+                        <h3>Subtitle</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
+                    </div>
+                </li>
+            </ul>
         </div>
-        
-        <div class="grid">
-            <img src="img/port-grid.png" alt="Portfolio Grid">
-        </div>
+       </section>
     </main>
 
     <footer>
         <p>&copy; 2015 Peter Surrena</p>
     </footer>
-
+	
+	<script src="scripts/lightbox.min.js"></script>
 </body>
 </html>

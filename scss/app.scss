@@ -3,15 +3,20 @@
 $black: #01010F;
 $white: #FFFFFF;
 $bg-grey: #F8F8F8;
+$dark-grey: #666666;
 $med-grey: #CCCCCC;
 $grey: #333333;
 $mint: #20D099;
 $mint-light: #E3FAF3;
 
+$sp_xl: 80px;
 $sp_lg: 40px;
 $sp_md: 20px;
 $sp_sm: 10px;
 $sp_xsm: 5px;
+
+$thumb_width: 250px;
+$thumb_height: 200px;
 
 $max-width: 1024px;
 
@@ -21,6 +26,7 @@ body {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     background-color: $white;
+    padding: 2%;
 }
         
 p {
@@ -46,17 +52,17 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
-    color: $black;
+    font-size: 1.375rem;
+    color: $dark-grey;
     margin: 0;
     font-weight: 400;
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: $black;
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 hr {
@@ -65,6 +71,25 @@ hr {
     margin: $sp_lg 0;
 }
 
+section {
+    padding: $sp_lg 0;
+    border-bottom: 1px solid $med-grey;
+
+    h2 {
+        margin: 0 0 $sp_md;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+/*
 ul { 
     margin: 0 $sp_sm;
     padding: 0;
@@ -86,7 +111,7 @@ ul {
         }
     }
 }
-
+*/
 .wrapper {
     max-width: $max-width;
     margin: 0 auto;
@@ -96,7 +121,6 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: $sp_md;
-    padding: 2%;
 
     #logo {
         img {
@@ -141,44 +165,70 @@ main {
     }
 }
 
-#project {
-    border-top: 3px solid $mint;
-    background-color: $bg-grey;
-    padding: 2%;
+.projects {
+    display: grid;
+    grid-gap: $sp_lg;
+}
 
-    .grid_base {
-        display: grid;
-        grid-gap: $sp_lg;
-        margin: $sp_lg 0;
+ul.project_row {
 
-        img {
-            width: 100%;
-            border: 1px solid $med-grey;
+
+    &:nth-last-child {
+        margin: 0;
+    }
+
+    li.project {
+        display: inline-block;
+        margin: 0 $sp_lg 0 0;
+        width:auto;
+        vertical-align: top;
+
+
+
+        &.thumb_one {
+            max-width: $thumb_width;
         }
 
-        ul {
-            margin: 0 0 $sp_md;
+        &.thumb_two {
+            max-width: $thumb_width * 2 + $sp_md;
         }
-    }
 
-    .h_1x1 {
-        grid-template-columns: 1fr 1fr;
-    }
+        &.thumb_three {
+            max-width: ($thumb_width * 3) + ($sp_sm*2);
+        }
 
-    .h_1x2 {
-        grid-template-columns: 1fr 2fr;
-    }
 
-    .h_2x1 {
-        grid-template-columns: 2fr 1fr;
-    }
 
-    .h_1x3 {
-        grid-template-columns: 1fr 3fr;
-    }
+        ul.project_thumbs {
+            display: inline-block;
 
-    .h_3x1 {
-        grid-template-columns: 3fr 1fr;
+            li {
+                display: inline-block;
+
+                a {
+                    text-decoration: none;
+
+                
+                }
+                &:last-child {
+                    border: 3px red;
+                }
+                img {
+                    width: auto;
+                    max-width: $thumb_width;  
+                }
+            } 
+        }
+
+        .project_description {
+            display: inline;;
+    
+            p {
+                font-size: 0.85em;
+                margin: $sp_xsm 0;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        }
     }
 }
 

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "sass": "^1.87.0"
+    "sass": "^1.87.0",
   },
   "scripts": {
     "build:scss": "sass scss/app.scss:app.css",
