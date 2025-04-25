@@ -169,8 +169,15 @@ ul.project_row {
 				
                 img {
                     width: auto;
-                    max-width: $thumb_width;  
+                    max-width: $thumb_width;
+					transition: transform 0.3s ease;
                 }
+				
+				&:hover {
+					img {
+						transform: scale(1.05);
+					}
+				}
             } 
         }
 

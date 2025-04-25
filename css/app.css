@@ -129,6 +129,10 @@ ul.project_row li.project ul.project_thumbs li:last-child {
 ul.project_row li.project ul.project_thumbs li img {
   width: auto;
   max-width: 250px;
+  transition: transform 0.3s ease;
+}
+ul.project_row li.project ul.project_thumbs li:hover img {
+  transform: scale(1.05);
 }
 ul.project_row li.project .project_description {
   display: inline-block;
