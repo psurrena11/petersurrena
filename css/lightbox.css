@@ -46,6 +46,12 @@ License: MIT
   border: 1px solid #666;
 }
 
+.lightbox-container img {
+	border: 1px solid #CCC;
+	
+
+}
+
 .lightbox-wrapper {
   position: relative;
 }
