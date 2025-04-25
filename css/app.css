@@ -99,9 +99,12 @@ header #social a:hover {
 
 ul.project_row li.project {
   display: inline-block;
-  margin: 0 40px 0 0;
+  margin: 0 40px 20px 0;
   width: auto;
   vertical-align: top;
+}
+ul.project_row li.project:only-child {
+  margin: 0 40px 0 0;
 }
 ul.project_row li.project:last-child:not(:only-child) {
   margin: 0;

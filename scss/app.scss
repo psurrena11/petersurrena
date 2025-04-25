@@ -134,9 +134,13 @@ ul.project_row {
 
     li.project {
         display: inline-block;
-        margin: 0 $sp_lg 0 0;
+        margin: 0 $sp_lg $sp_md 0;
         width: auto;
         vertical-align: top;
+		
+		&:only-child {
+			margin: 0 $sp_lg 0 0;
+		}
 		
 		&:last-child:not(:only-child) {
 			margin: 0;
