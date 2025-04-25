@@ -183,8 +183,6 @@ ul.project_row {
         width:auto;
         vertical-align: top;
 
-
-
         &.thumb_one {
             max-width: $thumb_width;
         }
@@ -197,8 +195,6 @@ ul.project_row {
             max-width: ($thumb_width * 3) + ($sp_sm*2);
         }
 
-
-
         ul.project_thumbs {
             display: inline-block;
 
@@ -206,13 +202,13 @@ ul.project_row {
                 display: inline-block;
 
                 a {
-                    text-decoration: none;
-
-                
+                    text-decoration: none;                
                 }
+				
                 &:last-child {
                     border: 3px red;
                 }
+				
                 img {
                     width: auto;
                     max-width: $thumb_width;  
