@@ -43,6 +43,7 @@ License: MIT
   justify-content: center;
   background-color: rgb(29, 29, 29);
   background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #666;
 }
 
 .lightbox-wrapper {
@@ -64,39 +65,45 @@ License: MIT
   width: 2.2em;
   height: 2.2em;
   position: absolute;
-  border-radius: 50%;
   transition: all 0.3s;
-  background-color: #000;
+  background-color: #FFF;
   background-position: center;
   background-repeat: no-repeat;
+  border: 0;
+  opacity: 0.5;
+}
+
+.lightbox-btn:hover {
+	opacity: 1;
+	cursor: pointer;
 }
 
 .lightbox-btn:disabled {
   cursor: initial;
-  background-color: #adadad;
+  opacity: 0.2;
 }
 
 .lightbox-btn-close {
-  top: -0.8em;
-  right: -0.8em;
-  background-size: 40%;
-  background-image: url('icons/icon-lightbox-close.svg');
+  top: -1em;
+  right: -3em;
+  background-size: 50%;
+  background-image: url('../img/icon_close.svg');
 }
 
 .lightbox-btn-next,
 .lightbox-btn-previous {
   top: calc(50% - (2.2em / 2));
-  background-size: 25% 80%;
-  background-image: url('icons/icon-lightbox-arrow.svg');
+  background-size: 50%;
+  background-image: url('../img/icon_arrow.svg');
 }
 
 .lightbox-btn-previous {
-  left: 1.5em;
+  left: -3.5em;
   transform: rotate(180deg);
 }
 
 .lightbox-btn-next {
-  right: 1.5em;
+  right: -3.5em;
 }
 
 /*
