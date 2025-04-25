@@ -93,8 +93,7 @@ header #social a:hover {
 }
 
 .projects {
-  display: grid;
-  grid-gap: 40px;
+  width: 1350px;
 }
 
 ul.project_row li.project {
@@ -102,6 +101,9 @@ ul.project_row li.project {
   margin: 0 40px 0 0;
   width: auto;
   vertical-align: top;
+}
+ul.project_row li.project:last-child:not(:only-child) {
+  margin: 0;
 }
 ul.project_row li.project.thumb_one {
   max-width: 250px;
@@ -137,9 +139,6 @@ ul.project_row li.project .project_description p {
   margin: 5px 0;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-ul.project_row:nth-last-child {
-  margin: 0;
-}
 
 footer {
   text-align: center;
@@ -149,6 +148,9 @@ footer p {
 }
 
 @media only screen and (max-width: 768px) {
+  .projects {
+    width: 100%;
+  }
   #social {
     grid-gap: 20px;
   }

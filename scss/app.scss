@@ -123,12 +123,10 @@ header {
 
 #statement {
 	margin: $sp_xl 0;
-
 }
 
 .projects {
-    display: grid;
-    grid-gap: $sp_lg;
+	width: 1350px;
 }
 
 ul.project_row {
@@ -136,8 +134,12 @@ ul.project_row {
     li.project {
         display: inline-block;
         margin: 0 $sp_lg 0 0;
-        width:auto;
+        width: auto;
         vertical-align: top;
+		
+		&:last-child:not(:only-child) {
+			margin: 0;
+		}
 
         &.thumb_one {
             max-width: $thumb_width;
@@ -183,10 +185,6 @@ ul.project_row {
             }
         }
     }
-	
-	&:nth-last-child {
-        margin: 0;
-    }
 }
 
 footer {
@@ -197,7 +195,11 @@ footer {
     }
 }
 
+
 @media only screen and (max-width: $bp_mobile) {
+	.projects {
+		width: 100%;
+	}
 
     #social {
         grid-gap: $sp_md;
