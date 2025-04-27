@@ -52,7 +52,7 @@ hr {
 
 section {
   padding: 40px 0;
-  border-bottom: 1px solid #CCCCCC;
+  border-top: 5px solid #01010F;
 }
 section h2 {
   margin: 0 0 20px;
@@ -154,6 +154,9 @@ ul.project_row li.project .project_description p {
 
 footer {
   text-align: center;
+  border-top: 1px solid #CCCCCC;
+  margin: 40px 0 0;
+  padding: 40px 0;
 }
 footer p {
   font-size: 0.65em;

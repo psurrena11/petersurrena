@@ -76,7 +76,7 @@ hr {
 
 section {
     padding: $sp_lg 0;
-    border-bottom: 1px solid $med-grey;
+    border-top: 5px solid $black;
 
     h2 {
         margin: 0 0 $sp_md;
@@ -126,6 +126,7 @@ header {
 #statement {
 	margin: $sp_xl 0;
 	width: 70%;
+	//background-color: $mint-light;
 }
 
 .projects {
@@ -205,6 +206,9 @@ ul.project_row {
 
 footer {
     text-align: center;
+	border-top: 1px solid $med-grey;
+	margin: $sp_lg 0 0;
+	padding: $sp_lg 0;
 
     p {
         font-size: 0.65em;
