@@ -129,9 +129,6 @@ ul.project_row li.project ul.project_thumbs li {
 ul.project_row li.project ul.project_thumbs li a {
   text-decoration: none;
 }
-ul.project_row li.project ul.project_thumbs li:last-child {
-  border: 3px red;
-}
 ul.project_row li.project ul.project_thumbs li img {
   width: auto;
   max-width: 250px;
@@ -143,6 +140,7 @@ ul.project_row li.project ul.project_thumbs li:hover img {
 ul.project_row li.project .project_description {
   display: inline-block;
   margin-top: 10px;
+  text-align: left;
 }
 ul.project_row li.project .project_description p {
   font-family: "Libre Baskerville", serif;
@@ -165,6 +163,20 @@ footer p {
 @media only screen and (max-width: 768px) {
   .projects {
     width: 100%;
+  }
+  ul.project_row {
+    margin: 0 0 40px;
+  }
+  ul.project_row li.project {
+    margin: 0 0 40px;
+  }
+  ul.project_row li.project.thumb_one, ul.project_row li.project.thumb_two, ul.project_row li.project.thumb_three {
+    max-width: 100%;
+    width: 100% !important;
+    text-align: center;
+  }
+  ul.project_row li.project ul.project_thumbs li img {
+    max-width: 80%;
   }
   #social {
     grid-gap: 20px;

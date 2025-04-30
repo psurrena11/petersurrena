@@ -171,15 +171,11 @@ ul.project_row {
                     text-decoration: none;                
                 }
 				
-                &:last-child {
-                    border: 3px red;
-                }
-				
-                img {
-                    width: auto;
-                    max-width: $thumb_width;
+				img {
+					width: auto;
+					max-width: $thumb_width;
 					transition: transform 0.3s ease;
-                }
+				}
 				
 				&:hover {
 					img {
@@ -192,6 +188,7 @@ ul.project_row {
         .project_description {
             display: inline-block;
 			margin-top: $sp_sm;
+			text-align: left;
     
             p {
 				font-family: "Libre Baskerville", serif;
@@ -220,7 +217,32 @@ footer {
 	.projects {
 		width: 100%;
 	}
-
+	
+	ul.project_row { 
+		margin: 0 0 $sp_lg;
+		li.project {
+			margin: 0 0 $sp_lg;
+			
+			&.thumb_one,
+			&.thumb_two,
+			&.thumb_three {
+				max-width: 100%;
+				width: 100% !important;
+				text-align: center;
+			}
+			
+			ul.project_thumbs {
+	
+				li {
+							
+					img {
+						max-width: 80%;
+					}
+				}
+			}
+		}
+	}
+		
     #social {
         grid-gap: $sp_md;
 
@@ -230,10 +252,6 @@ footer {
     }
 
 	#statement {
-
 		width: 100%;
 	}
-
- 
-
 }
