@@ -324,33 +324,21 @@
 	
 	<script src="scripts/lightbox.min.js"></script>
 	<script>
-	  // Function to replace hrefs on mobile
 	  function replaceHrefsOnMobile() {
-		// Define the breakpoint for mobile devices (e.g., 768px)
 		const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-		// Function to actually change the hrefs
 		function updateLinks() {
 		  if (mediaQuery.matches) { // If it's a mobile screen
-			// Select all anchor tags within elements with class 'project_thumbs'
 			const links = document.querySelectorAll('.project_thumbs a');
-			// Loop through each link and set its href to '#'
+			
 			links.forEach(link => {
 			  link.setAttribute('href', '#');
-			  // Optional: Remove lightbox functionality on mobile if needed
 			  link.removeAttribute('data-lightbox');
 			});
 		  }
-		  // Note: You might want to add an 'else' block here
-		  // to restore the original hrefs if the screen size changes later
-		  // and is no longer mobile. This requires storing the original hrefs first.
 		}
-
 	
 		updateLinks();
-
-		// Optional: Add a listener to rerun the function if the window is resized
-		// This handles orientation changes or browser resizing on desktop
 		mediaQuery.addEventListener('change', updateLinks);
 	  }
 

@@ -126,7 +126,6 @@ header {
 #statement {
 	margin: $sp_xl 0;
 	width: 70%;
-	//background-color: $mint-light;
 }
 
 .projects {
@@ -214,6 +213,7 @@ footer {
 
 
 @media only screen and (max-width: $bp_mobile) {
+	
 	.projects {
 		width: 100%;
 	}
