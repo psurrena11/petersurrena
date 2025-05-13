@@ -1,0 +1,23 @@
+#classes {
+	
+	.class_date-time {
+		font-size: 0.9rem;
+	}
+	
+	.class_description {
+		max-width: 700px;
+	}
+	
+	button {
+		border: 2px solid $black;
+		padding: $sp_sm $sp_md;
+		font-weight: 600;
+		background-color: $white;
+		
+		&:hover {
+			color: $pink;
+			border-color: $pink;
+			cursor: pointer;
+		}
+	}
+}

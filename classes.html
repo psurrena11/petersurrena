@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Surrena - Classes</title>
+	<link rel="icon" type="image/x-icon" href="img/fav.ico">
+    <link rel="stylesheet" href="css/app.css">
+	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8B2PHYTL4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-E8B2PHYTL4');
+	</script>
+	
+	<!-- lightbox.js -->
+	<link rel="stylesheet" href="css/lightbox.css">
+</head>
+<body>
+    <header>
+		<div id="logo">
+			<a href="index.html">
+				<img src="img/logo.png" alt="Peter Surrena Logo">
+			</a>
+        </div>
+        
+        <div id="social">
+			<a href="classes.html" title="Classes">Classes</a>
+			<a href="https://www.flickr.com/photos/weetstraw/" target="_blank" title="My photos">
+                <img src="img/icon_camera.svg" alt="Camera Icon">     
+            </a>
+            <a href="https://www.linkedin.com/in/psurrena/" target="_blank" title="View profile on LinkedIn">
+                <img src="img/icon_linkedin.svg" alt="Linkedin Icon">     
+            </a>
+        </div>
+    </header>
+
+	
+	<section id="classes">
+		<h2>Classes</h2>
+		<ul>
+			<li>
+				<h3>Intro to Figma</h3>
+				
+				<div class="class_date-time">
+					Saturday, May 31. 10:00AM - 3:00PM
+				</div>
+				
+				<div class="class_description">
+					<p>In this hands-on, one-day class, we will cover all the core concepts—from setting up your first project and navigating Figma’s interface to understanding essential tools, building reusable components, and laying the foundation for a simple design system. By the end of the day, you'll have the skills to organize and design your first app with confidence and clarity.</p>
+				</div>
+				<button href="https://lu.ma/teeofwl0" target="_blank">Register Now!</button>
+			</li>
+	</section>
+
+
+	
+		
+	   <!-- END Events -->
+
+    <footer>
+        <p>&copy; 2025 Peter Surrena</p>
+    </footer>
+	
+	<script src="scripts/lightbox.min.js"></script>
+	<script>
+	  function replaceHrefsOnMobile() {
+		const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+		function updateLinks() {
+		  if (mediaQuery.matches) { // If it's a mobile screen
+			const links = document.querySelectorAll('.project_thumbs a');
+			
+			links.forEach(link => {
+			  link.setAttribute('href', '#');
+			  link.removeAttribute('data-lightbox');
+			});
+		  }
+		}
+	
+		updateLinks();
+		mediaQuery.addEventListener('change', updateLinks);
+	  }
+
+	  // Call the main function when the DOM is fully loaded
+	  document.addEventListener('DOMContentLoaded', replaceHrefsOnMobile);
+	</script>
+</body>
+</html>
