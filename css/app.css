@@ -55,6 +55,9 @@ ul.project_row li.project .project_description p {
   width: 100%;
 }
 
+#classes h3 {
+  color: #e31c79;
+}
 #classes li {
   border-bottom: 1px solid #CCCCCC;
   margin: 0 0 40px;
@@ -131,7 +134,6 @@ h3 {
   color: #01010F;
   margin: 0;
   font-weight: 500;
-  color: #e31c79;
 }
 
 hr {
