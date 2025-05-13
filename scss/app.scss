@@ -47,6 +47,10 @@ a {
     &:hover {
         color: $grey;
     }
+	
+	&.inactive {
+		color: $grey;
+	}
 }
 
 h1 {
@@ -114,7 +118,7 @@ header {
 
     #social {
         display: inline-grid;
-        grid-template-columns: repeat( 3, min-content );
+        grid-template-columns: repeat( 4, min-content );
         justify-content: end;
         align-items: center;
         grid-gap: $sp_md;

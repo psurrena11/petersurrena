@@ -98,6 +98,9 @@ a {
 a:hover {
   color: #333333;
 }
+a.inactive {
+  color: #333333;
+}
 
 h1 {
   font-size: 1.625rem;
@@ -158,7 +161,7 @@ header #logo img {
 }
 header #social {
   display: inline-grid;
-  grid-template-columns: repeat(3, min-content);
+  grid-template-columns: repeat(4, min-content);
   justify-content: end;
   align-items: center;
   grid-gap: 20px;
