@@ -55,6 +55,14 @@ ul.project_row li.project .project_description p {
   width: 100%;
 }
 
+#classes li {
+  border-bottom: 1px solid #CCCCCC;
+  margin: 0 0 40px;
+  padding: 0 0 40px;
+}
+#classes li:last-child {
+  border: 0;
+}
 #classes .class_date-time {
   font-size: 0.9rem;
 }

@@ -55,7 +55,23 @@
 				</div>
 				
 				<div class="class_registration">
-					<a class="btn_register" href="https://lu.ma/teeofwl0" target="_blank" title="Register for Intro to Figma">Register Now!</a>
+					<a class="btn_register" href="https://lu.ma/teeofwl0" target="_blank" title="Register for Intro to Figma">Register Now</a>
+				</div>
+			</li>
+			
+			<li>
+				<h3>Figma Deep Dive</h3>
+				
+				<div class="class_date-time">
+					TBD
+				</div>
+				
+				<div class="class_description">
+					<p>This intermediate-level workshop is designed for those who already understand Figma’s basic tools and want to take their skills to the next level. You'll learn how to build smarter design systems, collaborate with cross-functional teams, streamline your workflow, and use Figma’s advanced features to design at scale. Perfect for designers ready to level up their practice and work more efficiently in real-world product environments.</p>
+				</div>
+				
+				<div class="class_registration">
+					<a class="ml-onclick-form btn_register" href="javascript:void(0)" onclick="ml('show', 'Sx8zoi', true)">Notify Me</a>
 				</div>
 			</li>
 	</section>
@@ -69,28 +85,14 @@
         <p>&copy; 2025 Peter Surrena</p>
     </footer>
 	
-	<script src="scripts/lightbox.min.js"></script>
+	<!-- MailerLite Universal -->
 	<script>
-	  function replaceHrefsOnMobile() {
-		const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-		function updateLinks() {
-		  if (mediaQuery.matches) { // If it's a mobile screen
-			const links = document.querySelectorAll('.project_thumbs a');
-			
-			links.forEach(link => {
-			  link.setAttribute('href', '#');
-			  link.removeAttribute('data-lightbox');
-			});
-		  }
-		}
-	
-		updateLinks();
-		mediaQuery.addEventListener('change', updateLinks);
-	  }
-
-	  // Call the main function when the DOM is fully loaded
-	  document.addEventListener('DOMContentLoaded', replaceHrefsOnMobile);
+		(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+		.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+		n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+		(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+		ml('account', '1519430');
 	</script>
+	<!-- End MailerLite Universal -->
 </body>
 </html>

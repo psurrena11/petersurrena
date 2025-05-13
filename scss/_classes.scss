@@ -1,4 +1,14 @@
 #classes {
+
+	li {
+		border-bottom: 1px solid $med-grey;
+		margin: 0 0 $sp_lg;
+		padding: 0 0 $sp_lg;
+		
+		&:last-child {
+			border: 0;
+		}
+	}
 	
 	.class_date-time {
 		font-size: 0.9rem;
