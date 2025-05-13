@@ -8,11 +8,17 @@
 		max-width: 700px;
 	}
 	
-	button {
+	.class_registration {
+		margin: $sp_sm 0 0;
+	}
+	
+	a.btn_register {
+		display: inline-block;
 		border: 2px solid $black;
 		padding: $sp_sm $sp_md;
 		font-weight: 600;
 		background-color: $white;
+		text-decoration: none;
 		
 		&:hover {
 			color: $pink;

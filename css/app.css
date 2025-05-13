@@ -61,13 +61,18 @@ ul.project_row li.project .project_description p {
 #classes .class_description {
   max-width: 700px;
 }
-#classes button {
+#classes .class_registration {
+  margin: 10px 0 0;
+}
+#classes a.btn_register {
+  display: inline-block;
   border: 2px solid #01010F;
   padding: 10px 20px;
   font-weight: 600;
   background-color: #FFFFFF;
+  text-decoration: none;
 }
-#classes button:hover {
+#classes a.btn_register:hover {
   color: #e31c79;
   border-color: #e31c79;
   cursor: pointer;
