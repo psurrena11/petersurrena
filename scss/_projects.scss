@@ -6,8 +6,7 @@
 div.project_row {
 
     div.project {
-        display: inline-grid;
-        grid-template-rows: auto auto;
+        display: inline-block;
         margin: 0 $sp_lg $sp_xl 0;
         width: auto;
         vertical-align: top;
@@ -33,7 +32,6 @@ div.project_row {
         }
 
         ul.project_thumbs {
-            order: 1;
             display: inline-block;
             
             li {
@@ -58,7 +56,6 @@ div.project_row {
         }
 
         .project_description {
-            order: 2;
             display: inline-block;
 			margin-top: $sp_sm;
 			text-align: left;
@@ -76,15 +73,4 @@ div.project_row {
 
 @media only screen and (max-width: $bp_mobile) {
 
-    div.project {
-        ul.project_thumbs {
-            order: 2;
-        }
-
-        .project_description {
-            order: 1;
-          
-        }
-
-    }
 }
