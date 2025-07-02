@@ -64,7 +64,6 @@ div.project_row div.project .project_description p {
   }
   div.project .project_description {
     order: 1;
-    background-color: pink;
   }
 }
 #classes h3 {
