@@ -4,50 +4,53 @@
   width: 1350px;
 }
 
-ul.project_row li.project {
-  display: inline-block;
+div.project_row div.project {
+  display: inline-grid;
+  grid-template-rows: auto auto;
   margin: 0 40px 80px 0;
   width: auto;
   vertical-align: top;
 }
-ul.project_row li.project:only-child {
+div.project_row div.project:only-child {
   margin: 0 40px 0 0;
 }
-ul.project_row li.project:last-child:not(:only-child) {
+div.project_row div.project:last-child:not(:only-child) {
   margin: 0;
 }
-ul.project_row li.project.thumb_one {
+div.project_row div.project.thumb_one {
   max-width: 250px;
 }
-ul.project_row li.project.thumb_two {
+div.project_row div.project.thumb_two {
   max-width: 520px;
 }
-ul.project_row li.project.thumb_three {
+div.project_row div.project.thumb_three {
   max-width: 770px;
 }
-ul.project_row li.project ul.project_thumbs {
+div.project_row div.project ul.project_thumbs {
+  order: 1;
   display: inline-block;
 }
-ul.project_row li.project ul.project_thumbs li {
+div.project_row div.project ul.project_thumbs li {
   display: inline-block;
 }
-ul.project_row li.project ul.project_thumbs li a {
+div.project_row div.project ul.project_thumbs li a {
   text-decoration: none;
 }
-ul.project_row li.project ul.project_thumbs li img {
+div.project_row div.project ul.project_thumbs li img {
   width: auto;
   max-width: 250px;
   transition: transform 0.3s ease;
 }
-ul.project_row li.project ul.project_thumbs li:hover img {
+div.project_row div.project ul.project_thumbs li:hover img {
   transform: scale(1.03);
 }
-ul.project_row li.project .project_description {
+div.project_row div.project .project_description {
+  order: 2;
   display: inline-block;
   margin-top: 10px;
   text-align: left;
 }
-ul.project_row li.project .project_description p {
+div.project_row div.project .project_description p {
   font-family: "Libre Baskerville", serif;
   font-size: 0.75em;
   margin: 5px 0;
@@ -55,6 +58,15 @@ ul.project_row li.project .project_description p {
   width: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+  div.project ul.project_thumbs {
+    order: 2;
+  }
+  div.project .project_description {
+    order: 1;
+    background-color: pink;
+  }
+}
 #classes h3 {
   color: #e31c79;
 }
