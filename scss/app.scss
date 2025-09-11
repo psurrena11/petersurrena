@@ -45,7 +45,9 @@ a {
     color: $black;
 
     &:hover {
+        transition: all 0.2s ease;
         color: $grey;
+        opacity: 0.7;
     }
 	
 	&.inactive {
@@ -131,10 +133,6 @@ header {
 			text-decoration: none;
 			font-weight: 500;
 			font-size: 0.9rem;
-
-            &:hover {
-                opacity: 0.7;
-            }
         }
     }
 }

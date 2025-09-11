@@ -49,46 +49,161 @@ div.project_row div.project .project_description {
 }
 div.project_row div.project .project_description p {
   font-family: "Libre Baskerville", serif;
-  font-size: 0.75em;
+  font-size: 0.85em;
   margin: 5px 0;
   max-width: 400px;
   width: 100%;
 }
-
-#classes h3 {
-  color: #e31c79;
-}
-#classes li {
-  border-bottom: 1px solid #CCCCCC;
-  margin: 0 0 40px;
-  padding: 0 0 40px;
-}
-#classes li:last-child {
-  border: 0;
-}
-#classes .class_date-time {
-  font-size: 0.9rem;
-}
-#classes .class_description {
-  max-width: 700px;
-}
-#classes .class_registration {
+div.project_row div.project .project_description a.casestudy_link {
+  display: inline-grid;
+  grid-template-columns: 20px 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
   margin: 10px 0 0;
 }
-#classes a.btn_register {
-  display: inline-block;
-  border: 2px solid #01010F;
-  padding: 10px 20px;
-  font-weight: 600;
-  background-color: #FFFFFF;
-  text-decoration: none;
+div.project_row div.project .project_description a.casestudy_link img {
+  width: 100%;
 }
-#classes a.btn_register:hover {
-  color: #e31c79;
-  border-color: #e31c79;
-  cursor: pointer;
+div.project_row div.project .project_description a.casestudy_link:hover {
+  opacity: 0.7;
 }
 
+/* Case Study Specific Styles */
+.case-study-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 5%;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section h2 {
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.overview-grid, .stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.solution-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.text-content p, .text-content ul {
+  font-size: 1.1em;
+  color: #444;
+}
+
+.text-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.text-content h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.insight-quote {
+  font-size: 1.8em;
+  font-style: italic;
+  text-align: center;
+  margin: 20px 0 30px;
+  color: #333;
+  font-weight: 500;
+}
+
+.stat-card {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.stat-card .stat-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #007aff;
+  margin-bottom: 5px;
+}
+
+.stat-card .stat-label {
+  font-size: 1em;
+  color: #666;
+}
+
+.gallery a img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  transition: transform 0.2s ease;
+}
+
+.gallery a img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Grid Adjustments */
+@media (min-width: 768px) {
+  .overview-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .solution-item {
+    grid-template-columns: 1fr 1fr;
+  }
+  .solution-item.reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+  .solution-item.reverse .gallery {
+    order: 2;
+  }
+  .solution-item.reverse .text-content {
+    order: 1;
+  }
+}
 body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
@@ -107,7 +222,9 @@ a {
   color: #01010F;
 }
 a:hover {
+  transition: all 0.2s ease;
   color: #333333;
+  opacity: 0.7;
 }
 a.inactive {
   color: #333333;
@@ -184,9 +301,6 @@ header #social a {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
-}
-header #social a:hover {
-  opacity: 0.7;
 }
 
 #statement {
