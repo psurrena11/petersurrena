@@ -79,14 +79,10 @@ div.project_row {
                 font-weight: 500;
                 text-decoration: none;
 
-                margin: $sp_sm 0 0;
+                margin: $sp_xsm 0 0;
 
                 img {
                     width: 100%;
-                }
-
-                &:hover {
-                    opacity: 0.7;
                 }
             }
         }

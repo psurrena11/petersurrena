@@ -1,44 +1,41 @@
- /* Case Study Specific Styles */
-        .case-study-container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 5%;
-        }
-        .hero {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 1px solid #eaeaea;
-            margin-bottom: 40px;
-        }
-        .hero h1 {
-            font-size: 3em;
+.case-study-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 5%;
+
+    p {
+        font-family: "Libre Baskerville", serif;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 40px 0;
+        margin-bottom: 40px;
+        
+        h1 {
+            font-size: 2em;
+            color: $black;
+
             margin-bottom: 10px;
             font-weight: 700;
         }
-        .hero p {
-            font-size: 1.2em;
-            color: #666;
+
+        p {
             max-width: 700px;
             margin: 0 auto;
         }
+    }
         .section {
             margin-bottom: 60px;
         }
-        .section h2 {
-            font-size: 1.1em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eaeaea;
-        }
+
+ 
         .overview-grid, .stats-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
         }
+
         .solution-item {
             display: grid;
             grid-template-columns: 1fr;
@@ -46,33 +43,38 @@
             align-items: center;
             margin-bottom: 50px;
         }
-        .text-content p, .text-content ul {
-            font-size: 1.1em;
-            color: #444;
+
+        .text-content  {
+
+            ul {
+                list-style-type: disc !important;
+                padding-left: 20px;
+            }
+
+            h3 {
+                font-size: 1.5em;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+    
         }
-        .text-content ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .text-content h3 {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+       
         .insight-quote {
             font-size: 1.8em;
             font-style: italic;
             text-align: center;
             margin: 20px 0 30px;
-            color: #333;
+        
             font-weight: 500;
         }
+
         .stat-card {
             text-align: center;
-            background: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
         }
+
         .stat-card .stat-number {
             font-size: 2.5em;
             font-weight: 700;
@@ -114,3 +116,4 @@
                 order: 1;
             }
         }
+    }
