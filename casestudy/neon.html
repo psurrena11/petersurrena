@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Surrena - IDG Neon</title>
+    <link rel="icon" type="image/x-icon" href="img/fav.ico">
+    <!-- lightbox.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-lightbox/2.14.2/simple-lightbox.min.css">
+    <style>
+        /* Basic Styles inspired by index.html */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid #eaeaea;
+        }
+        #logo img {
+            height: 40px;
+        }
+        #social a {
+            margin-left: 15px;
+        }
+        #social img {
+            height: 24px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            border-top: 1px solid #eaeaea;
+            margin-top: 60px;
+            color: #888;
+        }
+
+        /* Case Study Specific Styles */
+        .case-study-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eaeaea;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .section h2 {
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .overview-grid, .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .solution-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .text-content p, .text-content ul {
+            font-size: 1.1em;
+            color: #444;
+        }
+        .text-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .text-content h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .insight-quote {
+            font-size: 1.8em;
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0 30px;
+            color: #333;
+            font-weight: 500;
+        }
+        .stat-card {
+            text-align: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .stat-card .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #007aff;
+            margin-bottom: 5px;
+        }
+        .stat-card .stat-label {
+            font-size: 1em;
+            color: #666;
+        }
+        .gallery a img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            transition: transform 0.2s ease;
+        }
+        .gallery a img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Responsive Grid Adjustments */
+        @media (min-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr 2fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .solution-item {
+                grid-template-columns: 1fr 1fr;
+            }
+            .solution-item.reverse {
+                grid-template-columns: 1fr 1fr;
+            }
+            .solution-item.reverse .gallery {
+                order: 2;
+            }
+            .solution-item.reverse .text-content {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="https://placehold.co/200x50/000000/FFFFFF?text=Peter+Surrena" alt="Peter Surrena Logo">
+            </a>
+        </div>
+        <div id="social">
+            <a href="#" target="_blank" title="My photos">
+                <img src="https://placehold.co/24x24/000000/FFFFFF?text=C" alt="Camera Icon">     
+            </a>
+            <a href="#" target="_blank" title="View profile on LinkedIn">
+                <img src="https://placehold.co/24x24/000000/FFFFFF?text=IN" alt="Linkedin Icon">     
+            </a>
+        </div>
+    </header>
+
+    <main class="case-study-container">
+        
+        <section class="hero">
+            <h1>IDG Neon</h1>
+            <p>Architecting a platform to identify purchase intent from first-party data, driving significant growth in the sales pipeline for IDG customers.</p>
+        </section>
+
+        <section class="section">
+            <div class="overview-grid">
+                <div class="text-content">
+                    <h2>My Role</h2>
+                    <ul>
+                        <li>Product Architect</li>
+                        <li>Team Lead</li>
+                        <li>Platform & System Design</li>
+                        <li>Product Strategy</li>
+                    </ul>
+                </div>
+                <div class="text-content">
+                    <h2>The Challenge</h2>
+                    <p>
+                        IDG's network of B2B properties generated a massive amount of behavioral data, but its value was untapped. Sales and marketing teams at client companies had no way of knowing which accounts were actively researching solutions. The challenge was to create a product that could analyze engagement patterns across the network to surface real-time purchase intent.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Key Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">New</div>
+                    <div class="stat-label">First-Party Data Product</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">High-Value</div>
+                    <div class="stat-label">Qualified Sales Leads</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Growth</div>
+                    <div class="stat-label">In Customer Sales Pipelines</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Insight</h2>
+            <p class="insight-quote">
+                "The real product wasn't just content—it was the behavioral data of the professionals reading it."
+            </p>
+            <div class="text-content">
+                <p>
+                    We recognized that the engagement patterns of users across IDG's properties were a powerful indicator of a company's needs and upcoming purchases. By shifting our perspective, we could move beyond selling ad space and begin offering a high-value data product: qualified sales intelligence. This strategic pivot was the foundation of Neon.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Solution</h2>
+            <div class="solution-item">
+                <div class="gallery">
+                    <a href="https://placehold.co/1200x900/e2e8f0/334155?text=Account+Surge+Dashboard">
+                        <img src="https://placehold.co/800x600/e2e8f0/334155?text=Account+Surge+Dashboard" alt="Account Surge Dashboard">
+                    </a>
+                </div>
+                <div class="text-content">
+                    <h3>1. Identify Active Accounts</h3>
+                    <p>
+                        The main dashboard shows a prioritized list of accounts based on their "surge" activity. Instead of making sales teams guess, Neon tells them exactly which of their target companies are actively researching topics related to their products. This allows them to focus their efforts on accounts that are ready to engage.
+                    </p>
+                </div>
+            </div>
+            <div class="solution-item reverse">
+                <div class="gallery">
+                    <a href="https://placehold.co/1200x900/e2e8f0/334155?text=Account+Intent+Details">
+                        <img src="https://placehold.co/800x600/e2e8f0/334155?text=Account+Intent+Details" alt="Account Intent Details">
+                    </a>
+                </div>
+                <div class="text-content">
+                    <h3>2. Understand the "Why"</h3>
+                    <p>
+                       Clicking into an account reveals the specific topics and content they are engaging with. This view provides critical context, allowing a sales representative to tailor their outreach with relevant information. They can see not just *who* is interested, but *what* they are interested in, leading to more effective conversations.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Business Impact</h2>
+            <div class="text-content">
+                <p>
+                    Neon successfully created a new revenue stream by productizing IDG's first-party data. It provided customers with highly qualified, intent-based leads that directly fueled their sales pipelines. The platform fundamentally changed how clients perceived the value of the IDG network, evolving it from a simple advertising channel into a strategic sales intelligence partner.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Peter Surrena</p>
+    </footer>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-lightbox/2.14.2/simple-lightbox.min.js"></script>
+	<script>
+        (function() {
+            var $gallery = new SimpleLightbox('.gallery a', {});
+        })();
+    </script>
+</body>
+</html>
