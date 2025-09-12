@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Surrena - Work -- Knowledge Platform</title>
+    <title>Peter Surrena - Work - Knowledge Platform</title>
 	<link rel="icon" type="image/x-icon" href="../img/fav.ico">
     <link rel="stylesheet" href="../css/app.css">
-
-    <!-- lightbox.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-lightbox/2.14.2/simple-lightbox.min.css">
+	
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PGT9Q2WS');</script>
+	<!-- End Google Tag Manager -->
+	
+	<!-- lightbox.js -->
+	<link rel="stylesheet" href="../css/simple-lightbox.css">
 </head>
 
 <body>
@@ -16,6 +24,7 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGT9Q2WS"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
+
     <header>
         <div id="logo">
 			<a href="/index.html">
@@ -64,6 +73,8 @@
             </div>
         </section>
 
+
+
         <section class="section">
             <h2>Key Results</h2>
             <div class="stats-grid">
@@ -83,40 +94,44 @@
         </section>
 
         <section class="section">
-            <h2>The Insight</h2>
             <p class="insight-quote">
                 "Our users weren't data analysts. They were strategists who needed answers, not just raw numbers."
             </p>
             <div class="text-content">
+                <h2>The Insight</h2>
                 <p>
                     The biggest challenge was shifting the company's internal mindset from delivering raw data to providing actionable insights. Through workshops with stakeholders and SMEs, we focused on the core user need: a comprehensive, at-a-glance understanding of the competitive landscape for M&A, market research, and competitive intelligence. This led to a card-based, customizable dashboard design that surfaced the most critical information first.
                 </p>
             </div>
         </section>
 
+        <div class="img_break">
+            <img src="../img/casestudy/kp/kp-sketch.png" alt="Knowledge Platform Sketches">
+        </div>
+
         <section class="section">
             <h2>The Solution</h2>
             <div class="solution-item">
-                <div class="gallery">
-                    <a href="https://placehold.co/1200x900/e2e8f0/334155?text=Customizable+Explore+Dashboard">
-                        <img src="../img/portfolio/idc-kp-2.png" alt="Customizable Explore Dashboard">
+                <div class="gallery gallery-item">
+                    <a href="../img/casestudy/kp/kp-dash_full.png" data-lightbox="gallery" title="Knowledge Platform - Explore Dashboard">
+                        <img src="../img/casestudy/kp/kp-dash.png" alt="Knowledge Platform - Explore Dashboard">
                     </a>
                 </div>
                 <div class="text-content">
-                    <h3>1. Customizable "My Dashboard"</h3>
+                    <h3>Customizable "My Dashboard"</h3>
                     <p>
                         The "Explore" page gives users a customizable dashboard. Using the Card Library, they can drag and drop different data modules—like "Top 5 Buyers by Tech Spend" or "Top Contracts by Sector"—to build a view that is most relevant to their needs. This modular approach was key to making vast amounts of data digestible and user-centric.
                     </p>
                 </div>
             </div>
             <div class="solution-item reverse">
-                <div class="gallery">
-                    <a href="https://placehold.co/1200x900/e2e8f0/334155?text=Company+Profile+View">
-                        <img src="../img/portfolio/idc-kp-1.png" alt="Company Profile View">
+                <div class="gallery gallery-item">
+                    <a href="../img/casestudy/kp/kp-profile_full.png" data-lightbox="gallery" title="Knowledge Platform - Company Profile">
+                        <img src="../img/casestudy/kp/kp-profile.png" alt="Knowledge Platform - Company Profile">
                     </a>
                 </div>
                 <div class="text-content">
-                    <h3>2. The 360° Company View</h3>
+                    <h3>The 360° Company View</h3>
                     <p>
                        From search, users can dive into a detailed profile of any company. This view unifies all of IDC's data, showing the company as a Vendor, a Buyer, and a Partner. I developed a color-coded system (orange for vendor, blue for buyer, purple for partner) that became a consistent visual language across the platform, helping users instantly understand the context of the data they were seeing.
                     </p>
@@ -139,11 +154,19 @@
         <p>&copy; 2025 Peter Surrena</p>
     </footer>
 	
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-lightbox/2.14.2/simple-lightbox.min.js"></script>
+	<script src="../scripts/simple-lightbox.min.js"></script>
+	<script src="../scripts/resize.js"></script>
+	
+	<!-- Hotjar Tracking Code for https://www.petersurrena.com -->
 	<script>
-        (function() {
-            var $gallery = new SimpleLightbox('.gallery a', {});
-        })();
-    </script>
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:6445831,hjsv:6};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
 </body>
 </html>

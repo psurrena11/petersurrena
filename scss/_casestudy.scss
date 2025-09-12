@@ -1,21 +1,19 @@
 .case-study-container {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 0 5%;
-
+    margin: $sp_lg auto;
+ 
     p {
         font-family: "Libre Baskerville", serif;
     }
 
     .hero {
         text-align: center;
-        padding: 40px 0;
+        padding:  0;
         margin-bottom: 40px;
         
         h1 {
             font-size: 2em;
             color: $black;
-
             margin-bottom: 10px;
             font-weight: 700;
         }
@@ -25,95 +23,109 @@
             margin: 0 auto;
         }
     }
-        .section {
-            margin-bottom: 60px;
-        }
 
- 
-        .overview-grid, .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
+    .gallery {
 
-        .solution-item {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            align-items: center;
-            margin-bottom: 50px;
-        }
+        img {
+            border: 1px solid $med-grey !important;
+            border-radius: 0 !important;
+            box-shadow: 1px 1px 10px $light-grey;
+        }       
+    }
 
-        .text-content  {
-
-            ul {
-                list-style-type: disc !important;
-                padding-left: 20px;
-            }
-
-            h3 {
-                font-size: 1.5em;
-                font-weight: 600;
-                margin-bottom: 10px;
-            }
-
-    
-        }
-       
-        .insight-quote {
-            font-size: 1.8em;
-            font-style: italic;
-            text-align: center;
-            margin: 20px 0 30px;
+    .img_break {
+        max-width: 100%;
+        border: 1px solid $med-grey;
+        margin: 0 0 $sp_lg;
         
-            font-weight: 500;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .stat-card .stat-number {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: $mint;
-            margin-bottom: 5px;
-        }
-        .stat-card .stat-label {
-            font-size: 1em;
-            color: #666;
-        }
-        .gallery a img {
+        img {
             width: 100%;
-            border-radius: 8px;
-            border: 1px solid #eaeaea;
-            transition: transform 0.2s ease;
-        }
-        .gallery a img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Responsive Grid Adjustments */
-        @media (min-width: 768px) {
-            .overview-grid {
-                grid-template-columns: 1fr 2fr;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .solution-item {
-                grid-template-columns: 1fr 1fr;
-            }
-            .solution-item.reverse {
-                grid-template-columns: 1fr 1fr;
-            }
-            .solution-item.reverse .gallery {
-                order: 2;
-            }
-            .solution-item.reverse .text-content {
-                order: 1;
-            }
         }
     }
+ 
+    .overview-grid, .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .solution-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .text-content  {
+
+        ul {
+            padding-left: 20px;
+            
+            li {
+                list-style-type: disc !important;
+            }
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    }
+       
+    .insight-quote {
+        font-size: 1.8em;
+        text-align: center;
+        margin: $sp_md 0;
+        color: $mint;    
+    }
+
+    .stat-card {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .stat-card .stat-number {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: $mint;
+        margin-bottom: 5px;
+    }
+    .stat-card .stat-label {
+        font-size: 1em;
+        color: #666;
+    }
+    .gallery a img {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #eaeaea;
+        transition: transform 0.2s ease;
+    }
+    .gallery a img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Responsive Grid Adjustments */
+    @media (min-width: 768px) {
+        .overview-grid {
+            grid-template-columns: 1fr 2fr;
+        }
+        .stats-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .solution-item {
+            grid-template-columns: 1fr 1fr;
+        }
+        .solution-item.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+        .solution-item.reverse .gallery {
+            order: 2;
+        }
+        .solution-item.reverse .text-content {
+            order: 1;
+        }
+    }
+}

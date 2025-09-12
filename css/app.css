@@ -72,7 +72,6 @@ div.project_row div.project .project_description a.casestudy_link img {
 .case-study-container {
   max-width: 900px;
   margin: 40px auto;
-  padding: 0 5%;
   /* Responsive Grid Adjustments */
 }
 .case-study-container p {
@@ -80,7 +79,7 @@ div.project_row div.project .project_description a.casestudy_link img {
 }
 .case-study-container .hero {
   text-align: center;
-  padding: 40px 0;
+  padding: 0;
   margin-bottom: 40px;
 }
 .case-study-container .hero h1 {
@@ -93,8 +92,18 @@ div.project_row div.project .project_description a.casestudy_link img {
   max-width: 700px;
   margin: 0 auto;
 }
-.case-study-container .section {
-  margin-bottom: 60px;
+.case-study-container .gallery img {
+  border: 1px solid #CCCCCC !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 10px #EEEEEE;
+}
+.case-study-container .img_break {
+  max-width: 100%;
+  border: 1px solid #CCCCCC;
+  margin: 0 0 40px;
+}
+.case-study-container .img_break img {
+  width: 100%;
 }
 .case-study-container .overview-grid, .case-study-container .stats-grid {
   display: grid;
@@ -109,8 +118,10 @@ div.project_row div.project .project_description a.casestudy_link img {
   margin-bottom: 50px;
 }
 .case-study-container .text-content ul {
-  list-style-type: disc !important;
   padding-left: 20px;
+}
+.case-study-container .text-content ul li {
+  list-style-type: disc !important;
 }
 .case-study-container .text-content h3 {
   font-size: 1.5em;
@@ -119,10 +130,9 @@ div.project_row div.project .project_description a.casestudy_link img {
 }
 .case-study-container .insight-quote {
   font-size: 1.8em;
-  font-style: italic;
   text-align: center;
-  margin: 20px 0 30px;
-  font-weight: 500;
+  margin: 20px 0;
+  color: #1AA87B;
 }
 .case-study-container .stat-card {
   text-align: center;
@@ -132,7 +142,7 @@ div.project_row div.project .project_description a.casestudy_link img {
 .case-study-container .stat-card .stat-number {
   font-size: 2.5em;
   font-weight: 700;
-  color: #20D099;
+  color: #1AA87B;
   margin-bottom: 5px;
 }
 .case-study-container .stat-card .stat-label {
@@ -220,7 +230,7 @@ h3 {
 
 hr {
   height: 0;
-  border: 1px solid #20D099;
+  border: 1px solid #1AA87B;
   margin: 40px 0;
 }
 
