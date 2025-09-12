@@ -7,9 +7,10 @@ body {
 }
         
 p {
+    font-family: $serif;
     font-size: 1em;
     color: $black;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: 1.2;
 }
 
@@ -29,7 +30,6 @@ a {
 
 h1 {
     font-size: 1.625rem;
-	line-height: 1.6;
     color: $dark-grey;
     margin: 0;
     font-weight: 400;	

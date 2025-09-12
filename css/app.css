@@ -8,9 +8,10 @@ body {
 }
 
 p {
+  font-family: "Libre Baskerville", serif;
   font-size: 1em;
   color: #01010F;
-  line-height: 1.5;
+  line-height: 1.6;
   letter-spacing: 1.2;
 }
 
@@ -28,7 +29,6 @@ a.inactive {
 
 h1 {
   font-size: 1.625rem;
-  line-height: 1.6;
   color: #666666;
   margin: 0;
   font-weight: 400;
@@ -228,12 +228,9 @@ div.project_row div.project .project_description a.casestudy_link img {
 }
 
 .case-study-container {
-  max-width: 900px;
+  max-width: 1024px;
   margin: 40px auto;
   /* Responsive Grid Adjustments */
-}
-.case-study-container p {
-  font-family: "Libre Baskerville", serif;
 }
 .case-study-container .hero {
   margin: 40px 0 80px;
@@ -295,7 +292,7 @@ div.project_row div.project .project_description a.casestudy_link img {
 .case-study-container .insight-quote {
   font-size: 1.8em;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 40px;
   color: #FF2A68;
 }
 .case-study-container .stat-card {

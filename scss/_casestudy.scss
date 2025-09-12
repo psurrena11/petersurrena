@@ -1,10 +1,7 @@
 .case-study-container {
-    max-width: 900px;
+    max-width: $max-width;
     margin: $sp_lg auto;
- 
-    p {
-        font-family: $serif
-    }
+
 
     .hero {
         margin: $sp_lg 0 $sp_xl;
@@ -19,7 +16,7 @@
         }
 
         p {
-            max-width: 700px;
+            max-width: $text-max-width;
             margin: 0 auto;
         }
     }
@@ -65,7 +62,7 @@
 
     .text-content  {
         width: 100%;
-        max-width: 700px;
+        max-width: $text-max-width;
 
         ul {
             padding-left: $sp_md;
@@ -81,7 +78,7 @@
     .insight-quote {
         font-size: 1.8em;
         text-align: center;
-        margin: $sp_md 0;
+        margin: $sp_md 0 $sp_lg;
         color: $accent;    
     }
 
