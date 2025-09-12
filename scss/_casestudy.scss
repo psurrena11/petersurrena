@@ -7,7 +7,7 @@
     }
 
     .hero {
-        margin: $sp_xl 0;
+        margin: $sp_lg 0 $sp_xl;
         text-align: center;
         
         h1 {
@@ -41,11 +41,11 @@
 
     .img_break {
         max-width: 100%;
-        border: 1px solid $med-grey;
-        margin: 0 0 $sp_lg;
-        
+        margin: 0 0 $sp_lg;    
+
         img {
             width: 100%;
+            border: 1px solid $med-grey;
         }
     }
  

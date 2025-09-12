@@ -236,7 +236,7 @@ div.project_row div.project .project_description a.casestudy_link img {
   font-family: "Libre Baskerville", serif;
 }
 .case-study-container .hero {
-  margin: 80px 0;
+  margin: 40px 0 80px;
   text-align: center;
 }
 .case-study-container .hero h1 {
@@ -262,11 +262,11 @@ div.project_row div.project .project_description a.casestudy_link img {
 }
 .case-study-container .img_break {
   max-width: 100%;
-  border: 1px solid #CCCCCC;
   margin: 0 0 40px;
 }
 .case-study-container .img_break img {
   width: 100%;
+  border: 1px solid #CCCCCC;
 }
 .case-study-container .overview-grid, .case-study-container .stats-grid {
   display: grid;
