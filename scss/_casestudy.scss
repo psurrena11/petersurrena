@@ -7,15 +7,15 @@
     }
 
     .hero {
+        margin: $sp_xl 0;
         text-align: center;
-        padding:  0;
-        margin-bottom: 40px;
         
         h1 {
             font-size: 2em;
             color: $black;
             margin-bottom: 10px;
             font-weight: 700;
+            color: $mint;
         }
 
         p {
@@ -27,9 +27,15 @@
     .gallery {
 
         img {
-            border: 1px solid $med-grey !important;
+            width: 100%;
+            border: 1px solid $med-grey;
             border-radius: 0 !important;
             box-shadow: 1px 1px 10px $light-grey;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
         }       
     }
 
@@ -46,31 +52,29 @@
     .overview-grid, .stats-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: $sp_xl;
     }
 
     .solution-item {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: $sp_lg;
         align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: $sp_lg;
     }
 
     .text-content  {
+        width: 100%;
+        max-width: 700px;
 
         ul {
-            padding-left: 20px;
+            padding-left: $sp_md;
             
             li {
                 list-style-type: disc !important;
+                font-family: "Libre Baskerville", serif;
+                margin: 0 0 $sp_sm;
             }
-        }
-
-        h3 {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 10px;
         }
     }
        
@@ -83,29 +87,22 @@
 
     .stat-card {
         text-align: center;
-        padding: 20px;
-        border-radius: 8px;
+        padding: $sp_md;
+        border-radius: $radius;
+        border: 1px solid $med-grey;
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: $mint;
+            margin-bottom: $sp_sm;
+        }
+
+        .stat-label {
+           font-family: "Libre Baskerville", serif;
+        }
     }
 
-    .stat-card .stat-number {
-        font-size: 2.5em;
-        font-weight: 700;
-        color: $mint;
-        margin-bottom: 5px;
-    }
-    .stat-card .stat-label {
-        font-size: 1em;
-        color: #666;
-    }
-    .gallery a img {
-        width: 100%;
-        border-radius: 8px;
-        border: 1px solid #eaeaea;
-        transition: transform 0.2s ease;
-    }
-    .gallery a img:hover {
-        transform: scale(1.02);
-    }
 
     /* Responsive Grid Adjustments */
     @media (min-width: 768px) {

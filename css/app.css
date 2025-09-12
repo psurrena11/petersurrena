@@ -78,24 +78,29 @@ div.project_row div.project .project_description a.casestudy_link img {
   font-family: "Libre Baskerville", serif;
 }
 .case-study-container .hero {
+  margin: 80px 0;
   text-align: center;
-  padding: 0;
-  margin-bottom: 40px;
 }
 .case-study-container .hero h1 {
   font-size: 2em;
   color: #01010F;
   margin-bottom: 10px;
   font-weight: 700;
+  color: #1AA87B;
 }
 .case-study-container .hero p {
   max-width: 700px;
   margin: 0 auto;
 }
 .case-study-container .gallery img {
-  border: 1px solid #CCCCCC !important;
+  width: 100%;
+  border: 1px solid #CCCCCC;
   border-radius: 0 !important;
   box-shadow: 1px 1px 10px #EEEEEE;
+  transition: transform 0.2s ease;
+}
+.case-study-container .gallery img:hover {
+  transform: scale(1.02);
 }
 .case-study-container .img_break {
   max-width: 100%;
@@ -108,25 +113,26 @@ div.project_row div.project .project_description a.casestudy_link img {
 .case-study-container .overview-grid, .case-study-container .stats-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 80px;
 }
 .case-study-container .solution-item {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+}
+.case-study-container .text-content {
+  width: 100%;
+  max-width: 700px;
 }
 .case-study-container .text-content ul {
   padding-left: 20px;
 }
 .case-study-container .text-content ul li {
   list-style-type: disc !important;
-}
-.case-study-container .text-content h3 {
-  font-size: 1.5em;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-family: "Libre Baskerville", serif;
+  margin: 0 0 10px;
 }
 .case-study-container .insight-quote {
   font-size: 1.8em;
@@ -138,25 +144,16 @@ div.project_row div.project .project_description a.casestudy_link img {
   text-align: center;
   padding: 20px;
   border-radius: 8px;
+  border: 1px solid #CCCCCC;
 }
 .case-study-container .stat-card .stat-number {
   font-size: 2.5em;
   font-weight: 700;
   color: #1AA87B;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .case-study-container .stat-card .stat-label {
-  font-size: 1em;
-  color: #666;
-}
-.case-study-container .gallery a img {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #eaeaea;
-  transition: transform 0.2s ease;
-}
-.case-study-container .gallery a img:hover {
-  transform: scale(1.02);
+  font-family: "Libre Baskerville", serif;
 }
 @media (min-width: 768px) {
   .case-study-container .overview-grid {
@@ -236,7 +233,7 @@ hr {
 
 section {
   padding: 40px 0;
-  border-top: 5px solid #01010F;
+  border-top: 3px solid #01010F;
 }
 section h2 {
   margin: 0 0 20px;
