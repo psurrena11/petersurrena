@@ -1,7 +1,7 @@
 
 body {
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    font-family: $sans-serif;
     background-color: $white;
     padding: 2%;
 }
@@ -33,7 +33,7 @@ h1 {
     color: $dark-grey;
     margin: 0;
     font-weight: 400;	
-	font-family: "Libre Baskerville", serif;
+	font-family: $serif;
 }
 
 h2 {
@@ -52,7 +52,7 @@ h3 {
 
 hr {
     height: 0;
-    border: 1px solid $mint;
+    border: 1px solid $accent;
     margin: $sp_lg 0;
 }
 
@@ -131,7 +131,7 @@ footer {
     grid-template-columns: $sp_sm 1fr;
     grid-gap: $sp_sm;
     align-items: center;
-    font-family: "Poppins", sans-serif;
+    font-family: $sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
     text-decoration: none;

@@ -51,7 +51,7 @@ h3 {
 
 hr {
   height: 0;
-  border: 1px solid #1AA87B;
+  border: 1px solid #FF2A68;
   margin: 40px 0;
 }
 
@@ -240,11 +240,11 @@ div.project_row div.project .project_description a.casestudy_link img {
   text-align: center;
 }
 .case-study-container .hero h1 {
-  font-size: 2em;
+  font-size: 2.25em;
+  font-family: "Poppins", sans-serif;
   color: #01010F;
   margin-bottom: 10px;
-  font-weight: 700;
-  color: #1AA87B;
+  color: #FF2A68;
 }
 .case-study-container .hero p {
   max-width: 700px;
@@ -296,7 +296,7 @@ div.project_row div.project .project_description a.casestudy_link img {
   font-size: 1.8em;
   text-align: center;
   margin: 20px 0;
-  color: #1AA87B;
+  color: #FF2A68;
 }
 .case-study-container .stat-card {
   text-align: center;
@@ -306,8 +306,8 @@ div.project_row div.project .project_description a.casestudy_link img {
 }
 .case-study-container .stat-card .stat-number {
   font-size: 2.5em;
-  font-weight: 700;
-  color: #1AA87B;
+  font-weight: 500;
+  color: #FF2A68;
   margin-bottom: 10px;
 }
 .case-study-container .stat-card .stat-label {

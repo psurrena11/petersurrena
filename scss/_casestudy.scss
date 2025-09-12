@@ -3,7 +3,7 @@
     margin: $sp_lg auto;
  
     p {
-        font-family: "Libre Baskerville", serif;
+        font-family: $serif
     }
 
     .hero {
@@ -11,11 +11,11 @@
         text-align: center;
         
         h1 {
-            font-size: 2em;
+            font-size: 2.25em;
+            font-family: $sans-serif;
             color: $black;
             margin-bottom: 10px;
-            font-weight: 700;
-            color: $mint;
+            color: $accent;
         }
 
         p {
@@ -41,7 +41,7 @@
 
     .img_break {
         max-width: 100%;
-        margin: 0 0 $sp_lg;    
+        margin: 0 0 $sp_lg;
 
         img {
             width: 100%;
@@ -72,7 +72,7 @@
             
             li {
                 list-style-type: disc !important;
-                font-family: "Libre Baskerville", serif;
+                font-family: $serif;
                 margin: 0 0 $sp_sm;
             }
         }
@@ -82,7 +82,7 @@
         font-size: 1.8em;
         text-align: center;
         margin: $sp_md 0;
-        color: $mint;    
+        color: $accent;    
     }
 
     .stat-card {
@@ -93,13 +93,13 @@
 
         .stat-number {
             font-size: 2.5em;
-            font-weight: 700;
-            color: $mint;
+            font-weight: 500;
+            color: $accent;
             margin-bottom: $sp_sm;
         }
 
         .stat-label {
-           font-family: "Libre Baskerville", serif;
+           font-family: $serif;
         }
     }
 
