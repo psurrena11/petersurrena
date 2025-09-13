@@ -146,13 +146,16 @@ footer {
 
 
 @media only screen and (max-width: $bp_mobile) {
-	
+
+
 	.projects {
 		width: 100%;
+    
 	}
 	
 	ul.project_row { 
 		margin: 0 0 $sp_lg;
+            background-color: yellow;
 		li.project {
 			margin: 0 0 $sp_lg;
 			
@@ -187,4 +190,27 @@ footer {
 	#statement {
 		width: 100%;
 	}
+    
+
+    /* Responsive Grid Adjustments */
+    @media (min-width: 768px) {
+        .overview-grid {
+            grid-template-columns: 1fr 2fr;
+        }
+        .stats-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .solution-item {
+            grid-template-columns: 1fr 1fr;
+        }
+        .solution-item.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+        .solution-item.reverse .gallery {
+            order: 2;
+        }
+        .solution-item.reverse .text-content {
+            order: 1;
+        }
+    }
 }
