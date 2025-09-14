@@ -136,7 +136,6 @@ footer p {
   }
   ul.project_row {
     margin: 0 0 40px;
-    background-color: yellow;
   }
   ul.project_row li.project {
     margin: 0 0 40px;
@@ -157,27 +156,6 @@ footer p {
   }
   #statement {
     width: 100%;
-  }
-  /* Responsive Grid Adjustments */
-}
-@media only screen and (max-width: 768px) and (min-width: 768px) {
-  .overview-grid {
-    grid-template-columns: 1fr 2fr;
-  }
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .solution-item {
-    grid-template-columns: 1fr 1fr;
-  }
-  .solution-item.reverse {
-    grid-template-columns: 1fr 1fr;
-  }
-  .solution-item.reverse .gallery {
-    order: 2;
-  }
-  .solution-item.reverse .text-content {
-    order: 1;
   }
 }
 .projects {
@@ -252,6 +230,7 @@ div.project_row div.project .project_description a.casestudy_link img {
 .case-study-container {
   max-width: 1024px;
   margin: 40px auto;
+  /* Responsive Grid Adjustments */
 }
 .case-study-container .hero {
   margin: 40px 0 80px;
@@ -330,6 +309,26 @@ div.project_row div.project .project_description a.casestudy_link img {
 }
 .case-study-container .stat-card .stat-label {
   font-family: "Libre Baskerville", serif;
+}
+@media (min-width: 768px) {
+  .case-study-container .overview-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+  .case-study-container .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .case-study-container .solution-item {
+    grid-template-columns: 1fr 1fr;
+  }
+  .case-study-container .solution-item.reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+  .case-study-container .solution-item.reverse .gallery {
+    order: 2;
+  }
+  .case-study-container .solution-item.reverse .text-content {
+    order: 1;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

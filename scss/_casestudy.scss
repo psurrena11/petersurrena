@@ -2,7 +2,6 @@
     max-width: $max-width;
     margin: $sp_lg auto;
 
-
     .hero {
         margin: $sp_lg 0 $sp_xl;
         text-align: center;
@@ -99,4 +98,27 @@
            font-family: $serif;
         }
     }
+
+     /* Responsive Grid Adjustments */
+    @media (min-width: 768px) {
+        .overview-grid {
+            grid-template-columns: 1fr 2fr;
+        }
+        .stats-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .solution-item {
+            grid-template-columns: 1fr 1fr;
+        }
+        .solution-item.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+        .solution-item.reverse .gallery {
+            order: 2;
+        }
+        .solution-item.reverse .text-content {
+            order: 1;
+        }
+    }
 }
+
