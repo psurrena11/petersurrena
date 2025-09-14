@@ -71,7 +71,7 @@ div.project_row {
             a.casestudy_link {
                 display: inline-grid;
                 grid-template-columns: $sp_md 1fr;
-                grid-gap: $sp_sm;
+                grid-gap: $sp_xsm;
                 align-items: center;
 
                 font-family: $sans-serif;

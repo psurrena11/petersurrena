@@ -237,7 +237,7 @@ div.project_row div.project .project_description p {
 div.project_row div.project .project_description a.casestudy_link {
   display: inline-grid;
   grid-template-columns: 20px 1fr;
-  grid-gap: 10px;
+  grid-gap: 5px;
   align-items: center;
   font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
