@@ -19,12 +19,9 @@ a {
   color: #01010F;
 }
 a:hover {
-  transition: all 0.2s ease;
+  transition: transform 0.3s ease-in-out;
   color: #333333;
   opacity: 0.7;
-}
-a.inactive {
-  color: #333333;
 }
 
 h1 {
@@ -173,6 +170,10 @@ div.project_row div.project ul.project_thumbs.outdent {
 }
 div.project_row div.project ul.project_thumbs li {
   display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+div.project_row div.project ul.project_thumbs li:hover {
+  transform: scale(1.03);
 }
 div.project_row div.project ul.project_thumbs li a {
   text-decoration: none;
@@ -181,12 +182,7 @@ div.project_row div.project ul.project_thumbs li img {
   width: auto;
   max-width: 250px;
 }
-div.project_row div.project ul.project_thumbs li:hover img {
-  transform: scale(1.03);
-}
 div.project_row div.project .project_description {
-  display: inline-block;
-  margin-top: 10px;
   text-align: left;
 }
 div.project_row div.project .project_description p {
@@ -218,6 +214,9 @@ div.project_row div.project .project_description a.casestudy_link img {
   div.project_row {
     grid-template-columns: 1fr;
     overflow-x: auto;
+  }
+  div.project_row div.project {
+    margin: 0 0 20px;
   }
   div.project_row div.project ul.project_thumbs {
     grid-auto-columns: auto;
@@ -258,9 +257,12 @@ div.project_row div.project .project_description a.casestudy_link img {
   border: 1px solid #CCCCCC;
   border-radius: 0 !important;
   box-shadow: 1px 1px 10px #EEEEEE;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 .case-study-container .gallery img:hover {
+  transition: transform 0.2s ease-in-out;
+}
+.case-study-container .gallery img:hover:hover {
   transform: scale(1.03);
 }
 .case-study-container .img_break {

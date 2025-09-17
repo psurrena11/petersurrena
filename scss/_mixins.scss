@@ -1,7 +1,11 @@
-@mixin scale( $time: 1.03 ) {
-  transform: scale($time);
+@mixin scale( $factor: 1.03, $time: 0.2s ) {
+  transition: transform $time ease-in-out;
+
+  &:hover {
+    transform: scale($factor);
+  }
 }
 
 @mixin fade( $time: 0.3s ) {
-    transition: transform $time ease;
+  transition: transform $time ease-in-out;
 }
