@@ -85,7 +85,7 @@ header #logo img {
 }
 header #social {
   display: inline-grid;
-  grid-template-columns: repeat(4, min-content);
+  grid-template-columns: repeat(2, min-content);
   justify-content: end;
   align-items: center;
   grid-gap: 20px;
