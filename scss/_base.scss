@@ -133,15 +133,21 @@ footer {
     grid-gap: $sp_sm;
     align-items: center;
     font-family: $sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.85em;
     font-weight: 500;
     text-decoration: none;
-
     margin: $sp_xsm 0 0;
+    background-color: $really-light-grey;
+    padding: 5px 12px 5px 10px;
+    border-radius: $radius;
 
     img {
-        width: 100%;
+        width: 80%;
         transform: rotate(180deg);
+    }
+
+    &:hover {
+
     }
 }
 

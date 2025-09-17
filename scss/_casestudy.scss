@@ -11,12 +11,17 @@
             font-family: $sans-serif;
             color: $black;
             margin-bottom: 10px;
-            color: $accent;
+            font-weight: 600;
         }
 
         p {
-            max-width: $text-max-width;
-            margin: 0 auto;
+            font-size: 1.25rem;
+            font-weight: 400;	
+            font-family: $serif;
+            line-height: 1.5;
+            color: $dark-grey;
+            margin: $sp_md auto 0;
+            max-width: 750px;
         }
     }
 
@@ -27,10 +32,10 @@
             border: 1px solid $med-grey;
             border-radius: 0 !important;
             box-shadow: 1px 1px 10px $light-grey;
-            transition: transform 0.2s ease;
+            @include fade;
 
             &:hover {
-                transform: scale(1.02);
+                @include scale;
             }
         }       
     }
@@ -44,16 +49,21 @@
             border: 1px solid $med-grey;
         }
     }
- 
-    .overview-grid, .stats-grid {
+
+    .overview-grid {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: $sp_xl;
+        grid-template-columns: 1fr 2fr;
+    }
+ 
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: $sp_md;     
     }
 
     .solution-item {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: $sp_lg;
         align-items: center;
         margin-bottom: $sp_lg;
@@ -99,26 +109,48 @@
         }
     }
 
-     /* Responsive Grid Adjustments */
-    @media (min-width: 768px) {
+
+    @media only screen and (max-width: $bp_mobile) {
+        
+        .hero {
+            margin: $sp_md 0 $sp_lg;   
+        }
+
         .overview-grid {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
+            grid-gap: $sp_md;
         }
+        
         .stats-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
+            gap: $sp_sm;
         }
+
         .solution-item {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
+
         .solution-item.reverse {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
+
+        .gallery {
+            text-align: center;
+
+            img {
+                width: 70%;
+            }
+        }
+    }
+
+     @media (min-width: $bp-mobile) {
+
         .solution-item.reverse .gallery {
             order: 2;
         }
         .solution-item.reverse .text-content {
             order: 1;
         }
-    }
+     }
 }
 
