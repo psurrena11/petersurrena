@@ -147,37 +147,6 @@ footer {
 
 @media only screen and (max-width: $bp_mobile) {
 
-
-	.projects {
-		width: 100%;
-    
-	}
-	
-	ul.project_row { 
-		margin: 0 0 $sp_lg;
-        
-		li.project {
-			margin: 0 0 $sp_lg;
-			
-			&.thumb_one,
-			&.thumb_two,
-			&.thumb_three {
-				max-width: 100%;
-				width: 100% !important;
-				text-align: center;
-			}
-			
-			ul.project_thumbs {
-	
-				li {
-							
-					img {
-						max-width: 80%;
-					}
-				}
-			}
-		}
-	}
 		
     #social {
         grid-gap: $sp_md;
@@ -189,8 +158,5 @@ footer {
 
 	#statement {
 		width: 100%;
-	}
-    
-
-   
+	}   
 }

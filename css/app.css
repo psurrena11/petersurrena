@@ -131,23 +131,6 @@ footer p {
 }
 
 @media only screen and (max-width: 768px) {
-  .projects {
-    width: 100%;
-  }
-  ul.project_row {
-    margin: 0 0 40px;
-  }
-  ul.project_row li.project {
-    margin: 0 0 40px;
-  }
-  ul.project_row li.project.thumb_one, ul.project_row li.project.thumb_two, ul.project_row li.project.thumb_three {
-    max-width: 100%;
-    width: 100% !important;
-    text-align: center;
-  }
-  ul.project_row li.project ul.project_thumbs li img {
-    max-width: 80%;
-  }
   #social {
     grid-gap: 20px;
   }
@@ -159,32 +142,25 @@ footer p {
   }
 }
 .projects {
-  width: 1350px;
+  display: grid;
+  grid-gap: 40px;
+  max-width: 1350px;
 }
 
+div.project_row {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 40px;
+}
 div.project_row div.project {
-  display: inline-block;
-  margin: 0 40px 80px 0;
+  display: grid;
+  grid-template-rows: max-content max-content;
   width: auto;
   vertical-align: top;
 }
-div.project_row div.project:only-child {
-  margin: 0 40px 0 0;
-}
-div.project_row div.project:last-child:not(:only-child) {
-  margin: 0;
-}
-div.project_row div.project.thumb_one {
-  max-width: 250px;
-}
-div.project_row div.project.thumb_two {
-  max-width: 520px;
-}
-div.project_row div.project.thumb_three {
-  max-width: 770px;
-}
 div.project_row div.project ul.project_thumbs {
-  display: inline-block;
+  display: grid;
+  grid-auto-flow: column;
 }
 div.project_row div.project ul.project_thumbs li {
   display: inline-block;
@@ -195,7 +171,6 @@ div.project_row div.project ul.project_thumbs li a {
 div.project_row div.project ul.project_thumbs li img {
   width: auto;
   max-width: 250px;
-  transition: transform 0.3s ease;
 }
 div.project_row div.project ul.project_thumbs li:hover img {
   transform: scale(1.03);
@@ -227,6 +202,24 @@ div.project_row div.project .project_description a.casestudy_link img {
   width: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+  .projects {
+    overflow: hidden;
+  }
+  div.project_row {
+    grid-template-columns: 1fr;
+    overflow-x: auto;
+  }
+  div.project_row div.project ul.project_thumbs {
+    grid-auto-columns: auto;
+    column-gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  div.project_row div.project ul.project_thumbs::-webkit-scrollbar {
+    display: none;
+  }
+}
 .case-study-container {
   max-width: 1024px;
   margin: 40px auto;

@@ -1,0 +1,7 @@
+@mixin scale( $time: 1.03 ) {
+  transform: scale($time);
+}
+
+@mixin fade( $time: 0.3s ) {
+    transition: transform $time ease;
+}
