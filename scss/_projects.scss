@@ -13,12 +13,15 @@ div.project_row {
     div.project {
         display: grid;
         grid-template-rows: max-content max-content;
-        width: auto;
-        vertical-align: top;       	
+        grid-gap: 0;
 
         ul.project_thumbs {
             display: grid;
-            grid-auto-flow: column; 
+            grid-auto-flow: column;
+        
+            &.outdent {
+                margin-left: -11px;
+            }
 
             li {
                 display: inline-block;
@@ -77,8 +80,6 @@ div.project_row {
 @media only screen and (max-width: $bp_mobile) {
 
     .projects {
-		//width: 100%;
-
         overflow:hidden;
 	}
 	

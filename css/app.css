@@ -29,6 +29,7 @@ a.inactive {
 
 h1 {
   font-size: 1.625rem;
+  line-height: 1.5;
   color: #666666;
   margin: 0;
   font-weight: 400;
@@ -37,7 +38,7 @@ h1 {
 
 h2 {
   font-size: 1.375rem;
-  color: #01010F;
+  color: #FF2A68;
   margin: 0;
   font-weight: 500;
 }
@@ -131,6 +132,9 @@ footer p {
 }
 
 @media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.25rem;
+  }
   #social {
     grid-gap: 20px;
   }
@@ -138,6 +142,7 @@ footer p {
     font-size: 0.85em;
   }
   #statement {
+    margin: 40px 0;
     width: 100%;
   }
 }
@@ -155,12 +160,14 @@ div.project_row {
 div.project_row div.project {
   display: grid;
   grid-template-rows: max-content max-content;
-  width: auto;
-  vertical-align: top;
+  grid-gap: 0;
 }
 div.project_row div.project ul.project_thumbs {
   display: grid;
   grid-auto-flow: column;
+}
+div.project_row div.project ul.project_thumbs.outdent {
+  margin-left: -11px;
 }
 div.project_row div.project ul.project_thumbs li {
   display: inline-block;
