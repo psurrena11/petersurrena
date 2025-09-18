@@ -1,9 +1,17 @@
 {
+  "name": "petersurrena.com",
+  "vesion": "1.1.1",
+  "private": "true",
+  "devDependencies": {
+    "sass": "^1.87.0",
+    "vite": "^7.1.6"
+  },
   "dependencies": {
-    "sass": "^1.87.0"
+    "simplelightbox": "^2.14.3"
   },
   "scripts": {
-    "build:scss": "sass scss/app.scss:app.css",
-    "watch:scss": "sass --watch scss/app.scss:css/app.css"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }

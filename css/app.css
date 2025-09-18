@@ -130,6 +130,7 @@ footer p {
   width: 80%;
   transform: rotate(180deg);
 }
+
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 1.25rem;
