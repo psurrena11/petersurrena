@@ -1,8 +1,8 @@
-name: Deploy to Staging and Production
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main", "staging"]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -18,7 +18,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
- 
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,13 +36,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create CNAME file for Production
-        if: github.ref == 'refs/heads/main'
+      - name: Create CNAME file
         run: echo "www.petersurrena.com" > ./dist/CNAME
-
-      - name: Create CNAME file for Staging
-        if: github.ref == 'refs/heads/staging'
-        run: echo "staging.petersurrena.com" > ./dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
