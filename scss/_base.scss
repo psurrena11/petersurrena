@@ -1,24 +1,27 @@
+@use "variables" as v;
+@use "mixins" as m;
+
 body {
     font-size: 16px;
-    font-family: $sans-serif;
-    background-color: $white;
+    font-family: v.$sans-serif;
+    background-color: v.$white;
     padding: 2%;
 }
         
 p {
-    font-family: $serif;
+    font-family: v.$serif;
     font-size: 1em;
-    color: $black;
+    color: v.$black;
     line-height: 1.6;
     letter-spacing: 1.2;
 }
 
 a {
-    color: $black;
+    color: v.$black;
 
     &:hover {
-        @include fade;
-        color: $grey;
+        @include m.fade;
+        color: v.$grey;
         opacity: 0.7;
     }
 }
@@ -26,38 +29,38 @@ a {
 h1 {
     font-size: 1.625rem;
     line-height: 1.5;
-    color: $dark-grey;
+    color: v.$dark-grey;
     margin: 0;
     font-weight: 400;	
-	font-family: $serif;
+	font-family: v.$serif;
 }
 
 h2 {
     font-size: 1.375rem;
-    color: $accent;
+    color: v.$accent;
     margin: 0;
     font-weight: 500;
 }
 
 h3 {
     font-size: 1.15rem;
-    color: $black;
+    color: v.$black;
     margin: 0;
     font-weight: 500;
 }
 
 hr {
     height: 0;
-    border: 1px solid $accent;
-    margin: $sp_lg 0;
+    border: 1px solid v.$accent;
+    margin: v.$sp_lg 0;
 }
 
 section {
-    padding: $sp_lg 0;
-    border-top: 3px solid $black;
+    padding: v.$sp_lg 0;
+    border-top: 3px solid v.$black;
 
     h2 {
-        margin: 0 0 $sp_md;
+        margin: 0 0 v.$sp_md;
     }
 	
 	&#classes {
@@ -77,7 +80,7 @@ ul {
 header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: $sp_md;
+    grid-gap: v.$sp_md;
 
     #logo {
         img {
@@ -90,7 +93,7 @@ header {
         grid-template-columns: repeat( 2, min-content );
         justify-content: end;
         align-items: center;
-        grid-gap: $sp_md;
+        grid-gap: v.$sp_md;
 
         text-align: right;
         vertical-align: bottom;
@@ -106,16 +109,16 @@ header {
 }
 
 #statement {
-	margin: $sp_xl 0;
+	margin: v.$sp_xl 0;
 	width: 70%;
 }
 
 
 footer {
     text-align: center;
-	border-top: 1px solid $med-grey;
-	margin: $sp_lg 0 0;
-	padding: $sp_lg 0;
+	border-top: 1px solid v.$med-grey;
+	margin: v.$sp_lg 0 0;
+	padding: v.$sp_lg 0;
 
     p {
         font-size: 0.65em;
@@ -124,17 +127,17 @@ footer {
 
 .back {
     display: inline-grid;
-    grid-template-columns: $sp_sm 1fr;
-    grid-gap: $sp_sm;
+    grid-template-columns: v.$sp_sm 1fr;
+    grid-gap: v.$sp_sm;
     align-items: center;
-    font-family: $sans-serif;
+    font-family: v.$sans-serif;
     font-size: 0.85em;
     font-weight: 500;
     text-decoration: none;
-    margin: $sp_xsm 0 0;
-    background-color: $really-light-grey;
+    margin: v.$sp_xsm 0 0;
+    background-color: v.$really-light-grey;
     padding: 5px 12px 5px 10px;
-    border-radius: $radius;
+    border-radius: v.$radius;
 
     img {
         width: 80%;
@@ -143,14 +146,14 @@ footer {
 }
 
 
-@media only screen and (max-width: $bp_mobile) {
+@media only screen and (max-width: v.$bp_mobile) {
 
     h1 {
         font-size: 1.25rem;
     }
 		
     #social {
-        grid-gap: $sp_md;
+        grid-gap: v.$sp_md;
 
         a {
             font-size: 0.85em;
@@ -158,7 +161,7 @@ footer {
     }
 
 	#statement {
-        margin: $sp_lg 0;
+        margin: v.$sp_lg 0;
 		width: 100%;
 	}   
 }
