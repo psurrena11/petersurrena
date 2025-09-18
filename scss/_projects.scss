@@ -1,13 +1,16 @@
+@use "variables" as v;
+@use "mixins" as m;
+
 .projects {
     display: grid;
-    grid-gap: $sp_lg;
+    grid-gap: v.$sp_lg;
 	max-width: 1350px;
 }
 
 div.project_row {
     display: grid;
     grid-template-columns: max-content max-content;
-    grid-gap: $sp_lg;
+    grid-gap: v.$sp_lg;
     
     div.project {
         display: grid;
@@ -24,7 +27,7 @@ div.project_row {
 
             li {
                 display: inline-block;
-                @include scale;
+                @include m.scale;
 
                 a {
                     text-decoration: none;                
@@ -32,7 +35,7 @@ div.project_row {
 				
 				img {
 					width: auto;
-					max-width: $thumb_width;    
+					max-width: v.$thumb_width;    
 				}
             } 
         }
@@ -41,25 +44,25 @@ div.project_row {
 			text-align: left;
     
             p {
-				font-family: $serif;
+				font-family: v.$serif;
                 font-size: 0.85em;
-                margin: $sp_xsm 0;
+                margin: v.$sp_xsm 0;
 				max-width: 400px;
 				width: 100%;          
             }
 
             a.casestudy_link {
                 display: inline-grid;
-                grid-template-columns: $sp_md 1fr;
-                grid-gap: $sp_xsm;
+                grid-template-columns: v.$sp_md 1fr;
+                grid-gap: v.$sp_xsm;
                 align-items: center;
 
-                font-family: $sans-serif;
+                font-family: v.$sans-serif;
                 font-size: 0.85rem;
                 font-weight: 500;
                 text-decoration: none;
 
-                margin: $sp_xsm 0 0;
+                margin: v.$sp_xsm 0 0;
 
                 img {
                     width: 100%;
@@ -69,10 +72,10 @@ div.project_row {
     }
 }
 
-@media only screen and (max-width: $bp_mobile) {
+@media only screen and (max-width: v.$bp_mobile) {
 
     .projects {
-        overflow:hidden;
+        overflow: hidden;
 	}
 	
 	div.project_row { 
@@ -80,11 +83,11 @@ div.project_row {
         overflow-x: auto;
      
 		div.project {
-            margin: 0 0 $sp_md;
+            margin: 0 0 v.$sp_md;
 	
 			ul.project_thumbs {
                 grid-auto-columns: auto;
-                column-gap: $sp_sm;
+                column-gap: v.$sp_sm;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
 				

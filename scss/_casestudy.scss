@@ -1,15 +1,18 @@
+@use "variables" as v;
+@use "mixins" as m;
+
 .case-study-container {
-    max-width: $max-width;
-    margin: $sp_lg auto;
+    max-width: v.$max-width;
+    margin: v.$sp_lg auto;
 
     .hero {
-        margin: $sp_lg 0 $sp_xl;
+        margin: v.$sp_lg 0 v.$sp_xl;
         text-align: center;
         
         h1 {
             font-size: 2.25em;
-            font-family: $sans-serif;
-            color: $black;
+            font-family: v.$sans-serif;
+            color: v.$black;
             margin-bottom: 10px;
             font-weight: 600;
         }
@@ -17,10 +20,10 @@
         p {
             font-size: 1.25rem;
             font-weight: 400;	
-            font-family: $serif;
+            font-family: v.$serif;
             line-height: 1.5;
-            color: $dark-grey;
-            margin: $sp_md auto 0;
+            color: v.$dark-grey;
+            margin: v.$sp_md auto 0;
             max-width: 750px;
         }
     }
@@ -29,24 +32,24 @@
 
         img {
             width: 100%;
-            border: 1px solid $med-grey;
+            border: 1px solid v.$med-grey;
             border-radius: 0 !important;
-            box-shadow: 1px 1px 10px $light-grey;
-            @include fade;
+            box-shadow: 1px 1px 10px v.$light-grey;
+            @include m.fade;
 
             &:hover {
-                @include scale;
+                @include m.scale;
             }
         }       
     }
 
     .img_break {
         max-width: 100%;
-        margin: 0 0 $sp_lg;
+        margin: 0 0 v.$sp_lg;
 
         img {
             width: 100%;
-            border: 1px solid $med-grey;
+            border: 1px solid v.$med-grey;
         }
     }
 
@@ -58,28 +61,28 @@
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: $sp_md;     
+        grid-gap: v.$sp_md;     
     }
 
     .solution-item {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: $sp_lg;
+        gap: v.$sp_lg;
         align-items: center;
-        margin-bottom: $sp_lg;
+        margin-bottom: v.$sp_lg;
     }
 
     .text-content  {
         width: 100%;
-        max-width: $text-max-width;
+        max-width: v.$text-max-width;
 
         ul {
-            padding-left: $sp_md;
+            padding-left: v.$sp_md;
             
             li {
                 list-style-type: disc !important;
-                font-family: $serif;
-                margin: 0 0 $sp_sm;
+                font-family: v.$serif;
+                margin: 0 0 v.$sp_sm;
             }
         }
     }
@@ -87,43 +90,43 @@
     .insight-quote {
         font-size: 1.8em;
         text-align: center;
-        margin: $sp_md 0 $sp_lg;
-        color: $accent;    
+        margin: v.$sp_md 0 v.$sp_lg;
+        color: v.$accent;    
     }
 
     .stat-card {
         text-align: center;
-        padding: $sp_md;
-        border-radius: $radius;
-        border: 1px solid $med-grey;
+        padding: v.$sp_md;
+        border-radius: v.$radius;
+        border: 1px solid v.$med-grey;
 
         .stat-number {
             font-size: 2.5em;
             font-weight: 500;
-            color: $accent;
-            margin-bottom: $sp_sm;
+            color: v.$accent;
+            margin-bottom: v.$sp_sm;
         }
 
         .stat-label {
-           font-family: $serif;
+           font-family: v.$serif;
         }
     }
 
 
-    @media only screen and (max-width: $bp_mobile) {
+    @media only screen and (max-width: v.$bp_mobile) {
         
         .hero {
-            margin: $sp_md 0 $sp_lg;   
+            margin: v.$sp_md 0 v.$sp_lg;   
         }
 
         .overview-grid {
             grid-template-columns: 1fr;
-            grid-gap: $sp_md;
+            grid-gap: v.$sp_md;
         }
         
         .stats-grid {
             grid-template-columns: 1fr;
-            gap: $sp_sm;
+            gap: v.$sp_sm;
         }
 
         .solution-item {
@@ -143,7 +146,7 @@
         }
     }
 
-     @media (min-width: $bp-mobile) {
+     @media (min-width: v.$bp-mobile) {
 
         .solution-item.reverse .gallery {
             order: 2;
