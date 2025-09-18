@@ -3,6 +3,8 @@ name: Deploy to Staging and Production
 on:
   push:
     branches: ["main", "staging"]
+    
+    workflow_dispatch:
 
 permissions:
   contents: read
