@@ -11,4 +11,4 @@ let lightbox = new SimpleLightbox('.gallery a', {
   "showCounter": false
 });
 
-console.log("App is running!");
+console.log("Have a cool summer! - Peter");
