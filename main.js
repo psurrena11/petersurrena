@@ -8,7 +8,8 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 let lightbox = new SimpleLightbox('.gallery a', {
-  "showCounter": false
+  "showCounter": false,
+  "overlayOpacity": 0.85
 });
 
 console.log("Have a cool summer! - Peter");
