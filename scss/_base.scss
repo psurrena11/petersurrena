@@ -33,14 +33,14 @@ h2 {
     font-size: 1.375rem;
     color: v.$accent;
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h3 {
     font-size: 1.15rem;
+    font-weight: 550;
     color: v.$black;
     margin: 0;
-    font-weight: 500;
 }
 
 hr {
@@ -121,18 +121,22 @@ footer {
 
 .button {
     display: inline-grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: v.$sp_md 1fr;
     grid-gap: v.$sp_sm;
     align-items: center;
     font-family: v.$sans-serif;
     font-size: 0.85em;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     margin: v.$sp_xsm 0 0;
     background-color: v.$really-light-grey;
     padding: 5px 12px 5px 10px;
     border-radius: v.$radius;
     border: 1px solid v.$light-grey;
+
+    img {
+        max-width: 100%;
+    }
 
     &:hover {
         border: 1px solid v.$med-grey;
@@ -145,8 +149,8 @@ footer {
     }
 
     &.back {
+        grid-gap: 0px;
         img { 
-            width: 80%;
             transform: rotate(180deg);
         }
     }
