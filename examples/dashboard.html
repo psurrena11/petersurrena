@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Morningstar Finance - Market Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2cabe5",
+                        "primary-hover": "#259acf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111421",
+                        "surface-dark": "#1a1e2e",
+                        "surface-darker": "#151825",
+                        "border-dark": "#2a2f45",
+                        "text-secondary": "#9da2b8",
+                        "positive": "#2cabe5", 
+                        "negative": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .text-accent {
+            @apply text-[#2cabe5];
+        }
+        .bg-accent {
+            @apply bg-[#2cabe5];
+        }
+        .border-accent {
+            @apply border-[#2cabe5];
+        }input[type=range] {
+            -webkit-appearance: none;width: 100%;background: transparent;}
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+        }
+        input[type=range]:focus {
+            outline: none;}
+        input[type=range]::-ms-track {
+            width: 100%;
+            cursor: pointer;
+            background: transparent; 
+            border-color: transparent;
+            color: transparent;
+        }
+        .chart-line {
+            @apply transition-all duration-300 ease-in-out opacity-40;
+        }
+        .legend-item:hover ~ .chart-container .chart-line {
+            @apply opacity-20;
+        }.group:hover .chart-line-hover {
+             @apply stroke-primary stroke-[3px] opacity-100 z-10;
+             filter: drop-shadow(0 0 4px rgba(44, 171, 229, 0.5));
+        }
+        .chart-grid-line {
+            @apply stroke-border-dark stroke-1 opacity-30;
+        }
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark dark:bg-surface-dark bg-white px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-[32px]">finance_mode</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Morningstar Finance</h2>
+</div>
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary flex border-none bg-background-light dark:bg-surface-darker items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg rounded-l-none border-l-0 text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-surface-darker focus:border-none h-full placeholder:text-text-secondary px-4 pl-2 text-base font-normal leading-normal" placeholder="Search markets, news..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-text-secondary hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-slate-900 dark:text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Markets</a>
+<a class="text-text-secondary hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">News</a>
+<a class="text-text-secondary hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Analysis</a>
+<a class="text-text-secondary hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Watchlist</a>
+</div>
+<button class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-primary-hover transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Subscribe</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-border-dark" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA32OaYMKphlhzNjyQK3tBNTb-jrh3mOOyfoIIFoINJ2umsFifwotFwEAcplDOgiZ-QHBGgbdBe4rGSLqOPUSSngMs569ml4Ck2o7UK8EavgevFtpIs6w-ZaOjfeMzua2ptC3SLqRAJOM4iHFtWeipDZe_EeE3G4vtElHhG7vEgMX72Ezr1G4DGaIIBqOO0gm18PP6L4xHfcupHJS2FYEZ7USeun2q2fPPU5AGT089vLbcvnPsOl27RKuzNd3oLSL2Ww3iQueOp67I");'></div>
+</div>
+</header>
+<div class="px-6 lg:px-10 py-6 max-w-[1600px] w-full mx-auto">
+<div class="flex flex-wrap gap-2 items-center mb-6">
+<a class="text-text-secondary hover:text-white text-sm font-medium leading-normal" href="#">Home</a>
+<span class="material-symbols-outlined text-text-secondary !text-sm">chevron_right</span>
+<span class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Dashboard</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight">Market Overview</h1>
+<p class="text-text-secondary mt-2">Welcome back, Alex. Here's your daily financial briefing.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-dark border border-border-dark rounded-lg text-sm font-medium text-white hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined !text-lg">download</span>
+                Export Report
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-dark border border-border-dark rounded-lg text-sm font-medium text-white hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined !text-lg">settings</span>
+                Customize
+            </button>
+</div>
+</div>
+<div class="mb-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-4 bg-surface-dark border border-border-dark rounded-xl p-6 flex flex-col h-full min-h-[400px]">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">school</span>
+<h3 class="text-lg font-bold text-white">Featured Research</h3>
+</div>
+<div class="flex flex-col gap-3 h-full overflow-y-auto pr-1 custom-scrollbar">
+<a class="group block p-3 bg-surface-darker rounded-lg hover:bg-primary/10 transition-colors border border-border-dark hover:border-primary/30" href="#">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">OUTLOOK</span>
+<span class="material-symbols-outlined text-text-secondary text-sm group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">2024 Market Outlook</h4>
+<p class="text-xs text-text-secondary mt-1 line-clamp-2">Comprehensive analysis of global economic trends for the upcoming year.</p>
+</a>
+<a class="group block p-3 bg-surface-darker rounded-lg hover:bg-primary/10 transition-colors border border-border-dark hover:border-primary/30" href="#">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">TECH</span>
+<span class="material-symbols-outlined text-text-secondary text-sm group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Tech Sector Deep Dive</h4>
+<p class="text-xs text-text-secondary mt-1 line-clamp-2">Analyzing the impact of AI advancements on semiconductor supply chains.</p>
+</a>
+<a class="group block p-3 bg-surface-darker rounded-lg hover:bg-primary/10 transition-colors border border-border-dark hover:border-primary/30" href="#">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">ENERGY</span>
+<span class="material-symbols-outlined text-text-secondary text-sm group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Renewable Energy Trends</h4>
+<p class="text-xs text-text-secondary mt-1 line-clamp-2">The shift towards green hydrogen and solar infrastructure investments.</p>
+</a>
+<a class="group block p-3 bg-surface-darker rounded-lg hover:bg-primary/10 transition-colors border border-border-dark hover:border-primary/30" href="#">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">PHARMA</span>
+<span class="material-symbols-outlined text-text-secondary text-sm group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Biotech Innovations Q3</h4>
+<p class="text-xs text-text-secondary mt-1 line-clamp-2">Key drug approvals and their potential market impact this quarter.</p>
+</a>
+</div>
+<div class="mt-4 pt-4 border-t border-border-dark text-center">
+<a class="text-xs font-bold text-primary hover:text-white transition-colors uppercase" href="#">View All Research</a>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="group relative overflow-hidden rounded-xl bg-surface-dark border border-border-dark h-[320px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Stock market graph overlay" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4AsSsPQv_33_d3UbqbL7T7UlqddGb0YMS_hC1BpE8ITi5HFkriGIweG0EIxhzM_GCX9yjV9ot8i-BZiMnukH-5Ny1li5FVVNgBh2Xd9tU5cHQnvAmYVZbWruFyaBdMmCE4ZZ8xr13-kcN064QfL2kQQP7kLR5w9Z-qs8YpCbIU0FHjPBcim2edw7T_diVnFn_UOqrBQFV7OJukkPAEHNiF9WL9PvSgPxGNymAXD4Kebg4_YRe3PVaHrdXKNmEu_mcWyBCLtMosHY");'>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dark via-surface-dark/95 to-transparent"></div>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-center max-w-4xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold tracking-wide text-primary bg-primary/20 rounded-full">TOP STORY</span>
+<div class="flex items-center gap-4 text-xs text-text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined !text-sm">schedule</span> 2h ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined !text-sm">person</span> Sarah Jenkins</span>
+</div>
+</div>
+<h3 class="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Global Markets Rally as Tech Sector Rebounds from Early Slump</h3>
+<p class="text-text-secondary line-clamp-2 text-base max-w-2xl">Investors are regaining confidence as major technology firms post better-than-expected earnings for Q3, driving a significant uptick across major indices despite ongoing inflationary pressures.</p>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-4 flex flex-col h-[220px]">
+<div class="flex justify-between items-center mb-2 gap-4">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+                Research Trends Ranking
+            </h3>
+<div class="flex gap-4 items-center">
+<div class="flex items-center gap-2 bg-surface-darker border border-border-dark rounded-lg px-2 py-1">
+<span class="text-[10px] uppercase text-text-secondary font-semibold">Rank by:</span>
+<select class="bg-transparent text-white text-xs border-none p-0 focus:ring-0 cursor-pointer">
+<option>Sentiment</option>
+<option>Volume</option>
+<option>Growth</option>
+</select>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-darker border border-border-dark text-white text-xs rounded px-3 py-1.5 pr-8 w-28 focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+<option>Global</option>
+<option>Americas</option>
+<option>EMEA</option>
+<option>APAC</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1.5 pointer-events-none text-text-secondary !text-base">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex-1 relative flex gap-4 h-full overflow-hidden">
+<div class="flex-1 relative h-full chart-container">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="1.5"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<path class="chart-line stroke-slate-700 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,85 C15,82 30,88 45,75 C60,65 75,70 90,75 L100,72" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-600 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,65 C10,68 25,60 40,62 C55,64 70,55 85,58 L100,60" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-600 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,45 C15,50 30,42 45,46 C60,50 75,40 90,42 L100,40" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-500 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,35 C12,32 25,40 37,36 C50,32 62,40 75,38 C87,35 95,32 100,30" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-500 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,55 C10,50 25,60 40,55 C55,48 70,55 85,50 L100,48" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-400 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,25 C15,20 30,30 45,25 C60,18 75,22 90,18 L100,15" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-400 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,80 C12,75 25,85 37,80 C50,72 62,78 75,75 C87,70 95,68 100,65" fill="none" stroke-width="1"></path>
+<path class="chart-line stroke-slate-700 hover:stroke-primary hover:stroke-[2px] hover:opacity-100" d="M0,90 C15,92 30,85 45,88 C60,92 75,85 90,82 L100,80" fill="none" stroke-width="1"></path>
+<path class="chart-line transition-all duration-300" d="M0,15 C10,12 20,18 30,10 C40,2 50,8 60,5 C70,2 80,10 90,4 L100,2" fill="none" filter="url(#glow)" stroke="#2cabe5" stroke-opacity="0.3" stroke-width="4"></path>
+<path class="chart-line transition-all duration-300" d="M0,15 C10,12 20,18 30,10 C40,2 50,8 60,5 C70,2 80,10 90,4 L100,2" fill="none" stroke="#2cabe5" stroke-width="2.5"></path>
+<circle cx="100" cy="2" fill="#111421" r="3" stroke="#2cabe5" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="w-48 flex flex-col gap-1 border-l border-border-dark pl-4 h-full overflow-y-auto custom-scrollbar">
+<div class="text-[10px] uppercase text-text-secondary font-bold mb-1 flex justify-between">
+<span>Topic</span>
+<span>Score</span>
+</div>
+<div class="group legend-item flex justify-between items-center p-1.5 rounded cursor-pointer bg-surface-darker border-l-2 border-primary hover:bg-surface-darker/80 transition-colors">
+<span class="text-xs font-bold text-white group-hover:text-primary">The Flow Show</span>
+<span class="text-xs font-bold text-primary">98</span>
+</div>
+<div class="group legend-item flex justify-between items-center p-1.5 rounded cursor-pointer hover:bg-surface-darker transition-colors border-l-2 border-transparent hover:border-slate-500">
+<span class="text-xs text-slate-300 group-hover:text-primary">Global Watch</span>
+<span class="text-xs text-text-secondary group-hover:text-white">85</span>
+</div>
+<div class="group legend-item flex justify-between items-center p-1.5 rounded cursor-pointer hover:bg-surface-darker transition-colors border-l-2 border-transparent hover:border-slate-500">
+<span class="text-xs text-slate-400 group-hover:text-primary">Inv. Strategy</span>
+<span class="text-xs text-text-secondary group-hover:text-white">78</span>
+</div>
+<div class="group legend-item flex justify-between items-center p-1.5 rounded cursor-pointer hover:bg-surface-darker transition-colors border-l-2 border-transparent hover:border-slate-500">
+<span class="text-xs text-slate-500 group-hover:text-primary">Macro Trends</span>
+<span class="text-xs text-text-secondary group-hover:text-white">62</span>
+</div>
+<div class="group legend-item flex justify-between items-center p-1.5 rounded cursor-pointer hover:bg-surface-darker transition-colors border-l-2 border-transparent hover:border-slate-500">
+<span class="text-xs text-slate-600 group-hover:text-primary">Rate Hikes</span>
+<span class="text-xs text-text-secondary group-hover:text-white">52</span>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 flex flex-col gap-8">
+<div class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden">
+<div class="p-5 border-b border-border-dark flex justify-between items-center">
+<h3 class="font-bold text-lg text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+                        Market Watch Video
+                    </h3>
+<a class="text-sm text-primary font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3">
+<div class="md:col-span-2 relative aspect-video md:aspect-auto bg-black group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Man presenting financial chart on screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKeJoJ0PiC27bTfir7VaMgncwhzvLmZYf-Xtk2VaqvXloVoxuXctiFe0BKvvjV78WvL1SRq8-PWKtDMpbl3yZFNvRSmL2l_5_y3eNTz19JnbMmWEMZLaYH89IyHxeITWLZzjzxJad7F57AevcvlFvZNE4mAdxtSU2lyJvekyOZaOSZte52yINrrdLTKb66x7kQYhmUbwI_l7O_LuvJUo9mKruQ7pjodkzhoJtYbXO2ajMvNW0wAKL5bl_pLJtKqbu4yP-7Htbr8mg");'></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-primary backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white !text-4xl fill-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">LIVE</span>
+<span class="text-white text-xs font-medium">Daily Briefing</span>
+</div>
+<h4 class="text-white font-bold text-lg mb-2">Fed Chair Powell Speaks on Interest Rates</h4>
+<div class="w-full bg-white/20 h-1 rounded-full overflow-hidden">
+<div class="bg-primary w-1/3 h-full rounded-full"></div>
+</div>
+<div class="flex justify-between text-[10px] text-white/80 mt-1">
+<span>14:20</span>
+<span>45:00</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-darker flex flex-col gap-4 overflow-y-auto max-h-[360px] md:max-h-full">
+<div class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-1">Up Next</div>
+<div class="flex gap-3 group cursor-pointer">
+<div class="relative w-24 h-16 rounded overflow-hidden flex-shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract crypto visualization" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRjNUlFArqE-Q560bHJZ62q8PzlM54nr6t-Gcc23r5EuTjXMuFATMwS9BLD_kG8fcWX-ZlzhDRsfRp35qs9h27e057HMNdC8vO9nrw4ESRAHOwHlQ0ZKW4WB8EMqzxvSXSf1py4D-81WOpzlR0_KqDLL6oogWg1GlaVaWJxt2p66EjxFxAJj6dxRPq3Zzm9OkhWiZdI62lQ5SL2g93mMjG4F3y7mIX8eiMsMm_Y1sFep6ZnoDl68-prpMXaobsX6QN5K1d4w8_CdM");'></div>
+<div class="absolute bottom-1 right-1 bg-black/80 text-white text-[10px] px-1 rounded">08:12</div>
+</div>
+<div class="flex flex-col justify-center">
+<h5 class="text-sm font-medium text-white line-clamp-2 group-hover:text-primary transition-colors">Understanding DeFi Protocols</h5>
+<span class="text-xs text-text-secondary mt-1">Tech Trends</span>
+</div>
+</div>
+<div class="flex gap-3 group cursor-pointer">
+<div class="relative w-24 h-16 rounded overflow-hidden flex-shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Office meeting discussion" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnNbccGevQOMKu85LAiGR3xPH_qQWIdVQ7h1uMfp0pcvN8_DWf0YzBsswrpjHis9xJ83w2fN5NW7LSFI5baXbd0afCVBQf8mDsnF3fORPF_sRwybt5U8Q96Df-8aEd3Ebazpxy34YjP-aPLd3tVbJ-5JWIBqvIheAfnaqHfLnH7oN5BaAe7iRv15VUHCFlg61qaJT0X4UulPv6OZEORR7_jtt8k03iwGR1fqJbyBa7ngjzfATT-tkcK5yKqMWPtGIp4aQ7lJTYa6E");'></div>
+<div class="absolute bottom-1 right-1 bg-black/80 text-white text-[10px] px-1 rounded">12:45</div>
+</div>
+<div class="flex flex-col justify-center">
+<h5 class="text-sm font-medium text-white line-clamp-2 group-hover:text-primary transition-colors">Sustainable Investing 2024</h5>
+<span class="text-xs text-text-secondary mt-1">ESG Focus</span>
+</div>
+</div>
+<div class="flex gap-3 group cursor-pointer">
+<div class="relative w-24 h-16 rounded overflow-hidden flex-shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Stock ticker board" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCK-LJ6pAahGtG9NF37QiQcFoKgAVI_dBcP5GA3y8DpInznpzU5TtgIRN1BM3xteLHwS-ltaiCOFI6nEMlWZIOMIdi38k5zzPjOnWiIHxi1bn4BA7GUUaFv62sU7SCXnmYva-dIK9aWkGDSK7Zf72UzAazAD7bu1ZXxwHU4jDp0VFxHUCfGiz-Mi7ZZ8nJZR2p9OXvMouZe6V1x9gw53HPVFyLcMpJYWlDPUuOP0KhBBJGUFgjixDpVeYDcUBEmBHeP2Q-_ucQpfR8");'></div>
+<div class="absolute bottom-1 right-1 bg-black/80 text-white text-[10px] px-1 rounded">05:30</div>
+</div>
+<div class="flex flex-col justify-center">
+<h5 class="text-sm font-medium text-white line-clamp-2 group-hover:text-primary transition-colors">Asian Markets Recap</h5>
+<span class="text-xs text-text-secondary mt-1">Morning Update</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-4">
+<h3 class="text-xl font-bold text-white flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                        Markets
+                    </h3>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 mr-4">
+<span class="text-xs text-white font-bold">24 hrs</span>
+<div class="relative w-24 h-1 bg-border-dark rounded-full">
+<div class="absolute left-0 top-0 bottom-0 w-1/2 bg-primary rounded-full"></div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
+</div>
+</div>
+<a class="text-sm text-primary font-medium hover:text-white transition-colors" href="#">View All Markets</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-all cursor-pointer group h-full flex flex-col">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">CRYPTO</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors !text-lg">arrow_outward</span>
+</div>
+<h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors leading-snug">Bitcoin Surges Past $35k Resistance Level</h4>
+<p class="text-text-secondary text-sm line-clamp-2 mb-4 flex-1">Technical indicators suggest a strong bullish momentum as institutional interest grows.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQ8C7Tzn1HxT8YTHydyw32QcV12UhKCt3KH6Wc9Gj3XCFOhNbno4gjo3njvgAHp41NMRQXav98dWuRCBVBG8E0jMfw7nZCKphRtZtZKF5qHc1IIajgx9gQ9K1CLXMewihw3-cc05WD90aHp_ri_rKnaB25cO8y5lVkmGwwDkDpBB75dizV_loj3-w8aUuyrahyC1cAcR1v77nk-YwCbXYkVPZH7sK2pNYbUKNbvl_r24KJOqH0c8tklX6EcX556awVQVLsLwMaN9Q");'></div>
+<span class="text-xs text-text-secondary">David Kim</span>
+</div>
+<span class="text-xs text-text-secondary">15 min ago</span>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-all cursor-pointer group h-full flex flex-col">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">COMMODITIES</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors !text-lg">arrow_outward</span>
+</div>
+<h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors leading-snug">Gold Prices Hold Steady Amid Inflation Data</h4>
+<p class="text-text-secondary text-sm line-clamp-2 mb-4 flex-1">Safe-haven assets remain attractive as central banks weigh next interest rate moves.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClJkyB8AdkFjqrQDZU7HWVP83YjlkxpvsGFBZSyY4jAs7gmaSdvDvLjx0sLi_VaC917rcScwsVP3Nvj-N-9-OQHDYZBiERVKBXpbJa5knVKv0_VMOV_rwGR7gne3uEEbk-HJ_RswTFA7WrLnyB94Xwfd7j37W1GMoBoYuCZX_OIeJvrpioUF8GF_lxBRexRGBjKMoumP1ULDDvyA52t-Z_1XvZEF3biFZePJoK7VXWBPyZHz7gDd3s4ju3G-r4-Z9zhBgWHL-_U-U");'></div>
+<span class="text-xs text-text-secondary">Elena Rostova</span>
+</div>
+<span class="text-xs text-text-secondary">1h ago</span>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-all cursor-pointer group h-full flex flex-col">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">FOREX</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors !text-lg">arrow_outward</span>
+</div>
+<h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors leading-snug">Euro Weakens as Manufacturing Output Slows</h4>
+<p class="text-text-secondary text-sm line-clamp-2 mb-4 flex-1">Eurozone PMI data came in below expectations, putting pressure on the currency pair.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqUd3nMaRMlbgdAzsbY39eSeRBcHCxCbG6r-SoaEJhjVRrFyTo9QPjHEJxMQyOeFagsXAQ02qnAKNzNm48XenOvRVbBicJai4t4DCk4XHVNObJG5czVudfxHsaeLtiNfqiU5JifhzmN93qBIzAPwv8IzowQx625vhTFFlLNmFEa1gICkbxdi8i5NEEqmYhtW_CvQtjzgUMhF3ulgYofCJzZ87zpAuVhazWI2rq6885FOW0ucDuZPlen6d3hAQIAf7xVETyqEUZGvc");'></div>
+<span class="text-xs text-text-secondary">Marcus Chen</span>
+</div>
+<span class="text-xs text-text-secondary">2h ago</span>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-all cursor-pointer group h-full flex flex-col">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">INDICES</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors !text-lg">arrow_outward</span>
+</div>
+<h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors leading-snug">Nasdaq 100 Futures Point to Higher Open</h4>
+<p class="text-text-secondary text-sm line-clamp-2 mb-4 flex-1">Big tech earnings anticipation drives pre-market sentiment higher.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCF6vmckF7TkfUlB4rhTrmSq-c_enWfZSOlpw_3s9flKt4Gaprc1gX2FOFqy45uVT20m4e9JoYWheld2aBYPCGI6fLSG1xebgumX5BQkbIBUorJ7E7CVIXfMxHY5wi9_j5j3LQ0N6YpjOyy8xMZd8VkhFRWGJQlo8VGqtyPVCYZ95m8RP2ZopFqUX8jACjAw7NIgCL0LH9Qy2VtbEA10hit8xGHXmB14U17KAJ9x1iESCJyuGOTQT8VF1pd65qvvmRUysbRF4CkAg0");'></div>
+<span class="text-xs text-text-secondary">Sarah Lewis</span>
+</div>
+<span class="text-xs text-text-secondary">3h ago</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-4">
+<h3 class="text-xl font-bold text-white flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                        Analysis
+                    </h3>
+<a class="text-sm text-primary font-medium hover:text-white transition-colors" href="#">View All Analysis</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-all cursor-pointer group h-full flex flex-col">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">DEEP DIVE</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors !text-lg">arrow_outward</span>
+</div>
+<h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors leading-snug">The AI Infrastructure Boom: Who Wins Next?</h4>
+<p class="text-text-secondary text-sm line-clamp-2 mb-4 flex-1">Beyond Nvidia, we examine the secondary layer of companies poised to benefit from datacenters.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnNbccGevQOMKu85LAiGR3xPH_qQWIdVQ7h1uMfp0pcvN8_DWf0YzBsswrpjHis9xJ83w2fN5NW7LSFI5baXbd0afCVBQf8mDsnF3fORPF_sRwybt5U8Q96Df-8aEd3Ebazpxy34YjP-aPLd3tVbJ-5JWIBqvIheAfnaqHfLnH7oN5BaAe7iRv15VUHCFlg61qaJT0X4UulPv6OZEORR7_jtt8k03iwGR1fqJbyBa7ngjzfATT-tkcK5yKqMWPtGIp4aQ7lJTYa6E");'></div>
+<span class="text-xs text-text-secondary">Tech Team</span>
+</div>
+<span class="text-xs text-text-secondary">8 min read</span>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-all cursor-pointer group h-full flex flex-col">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">OPINION</span>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors !text-lg">arrow_outward</span>
+</div>
+<h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors leading-snug">Why The Housing Market Correction Isn't Over</h4>
+<p class="text-text-secondary text-sm line-clamp-2 mb-4 flex-1">Interest rates are stickier than anticipated, keeping mortgage affordability out of reach.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-700 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-L4KRUer4mI96oOIqj78ERR_ASmE_nOna-ZOFdasS0lYKxwin4ECsAdvo_ENCOmGSR-Zp6zsS9fxYPM-mNhWtH-qcDB6IphP9LIfuidVndfel6OZWAwTYZgPdYPHWmYNsgSM2VTc7-CWJP45RBrwGLcovC0t4dZQfxjJgHsQbDZ1uSU-d0dkqued8AwI-w6aCl5_yTgyPeF4U87ff7TPB14sTwesGtPIL3h6SJA79QLKpHVMQdvqL4U6P0JCO0A7BfhVQAngPY6o");'></div>
+<span class="text-xs text-text-secondary">James Wilson</span>
+</div>
+<span class="text-xs text-text-secondary">5 min read</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden flex flex-col">
+<div class="p-5 border-b border-border-dark flex justify-between items-center">
+<h3 class="font-bold text-lg text-white">Market News</h3>
+<div class="flex gap-2">
+<button class="text-text-secondary hover:text-white"><span class="material-symbols-outlined !text-lg">tune</span></button>
+<button class="text-text-secondary hover:text-white"><span class="material-symbols-outlined !text-lg">refresh</span></button>
+</div>
+</div>
+<div class="flex flex-col divide-y divide-border-dark">
+<a class="p-4 hover:bg-surface-darker transition-colors group" href="#">
+<div class="flex gap-3 mb-2">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">FOREX</span>
+<span class="text-[10px] text-text-secondary">15 mins ago</span>
+</div>
+<h4 class="text-sm font-semibold text-white mb-1 group-hover:text-primary leading-snug">Euro gains against Dollar ahead of ECB meeting</h4>
+<p class="text-xs text-text-secondary line-clamp-2">Currency traders are pricing in a hawkish stance from the European Central Bank this Thursday.</p>
+</a>
+<a class="p-4 hover:bg-surface-darker transition-colors group" href="#">
+<div class="flex gap-3 mb-2">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">TECH</span>
+<span class="text-[10px] text-text-secondary">42 mins ago</span>
+</div>
+<h4 class="text-sm font-semibold text-white mb-1 group-hover:text-primary leading-snug">Semiconductor shortage easing faster than predicted</h4>
+<p class="text-xs text-text-secondary line-clamp-2">Automotive sector likely to benefit first as chip supplies normalize in global supply chains.</p>
+</a>
+<a class="p-4 hover:bg-surface-darker transition-colors group" href="#">
+<div class="flex gap-3 mb-2">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">RETAIL</span>
+<span class="text-[10px] text-text-secondary">1 hour ago</span>
+</div>
+<h4 class="text-sm font-semibold text-white mb-1 group-hover:text-primary leading-snug">Consumer spending data shows unexpected resilience</h4>
+<p class="text-xs text-text-secondary line-clamp-2">Despite inflation concerns, retail sales volumes ticked up by 0.4% in September.</p>
+</a>
+<a class="p-4 hover:bg-surface-darker transition-colors group" href="#">
+<div class="flex gap-3 mb-2">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">M&amp;A</span>
+<span class="text-[10px] text-text-secondary">2 hours ago</span>
+</div>
+<h4 class="text-sm font-semibold text-white mb-1 group-hover:text-primary leading-snug">Pharma giant announces acquisition of biotech startup</h4>
+<p class="text-xs text-text-secondary line-clamp-2">Deal valued at $4.2B expected to close by Q1 2025 pending regulatory approval.</p>
+</a>
+</div>
+<div class="p-3 bg-surface-darker border-t border-border-dark text-center">
+<a class="text-xs font-bold text-primary hover:text-primary/80 uppercase tracking-wide" href="#">View Full Feed</a>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden flex flex-col">
+<div class="p-5 border-b border-border-dark flex justify-between items-center">
+<h3 class="font-bold text-lg text-white">Economic Calendar</h3>
+<span class="text-xs text-text-secondary">Oct 2023</span>
+</div>
+<div class="grid grid-cols-7 text-center p-3 border-b border-border-dark bg-surface-darker text-xs text-text-secondary">
+<div>Su</div>
+<div>Mo</div>
+<div>Tu</div>
+<div>We</div>
+<div>Th</div>
+<div>Fr</div>
+<div>Sa</div>
+</div>
+<div class="grid grid-cols-7 text-center p-3 gap-y-3 text-sm">
+<div class="text-text-secondary/30">29</div>
+<div class="text-text-secondary/30">30</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">1</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer relative">
+                        2
+                        <span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>
+</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">3</div>
+<div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer shadow-lg shadow-primary/30 font-bold">4</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">5</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">6</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer relative">
+                        7
+                        <span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>
+</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">8</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer relative">
+                        9
+                         <span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>
+</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">10</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">11</div>
+<div class="text-white hover:bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto cursor-pointer">12</div>
+</div>
+<div class="border-t border-border-dark p-4 bg-surface-darker">
+<div class="text-xs font-bold text-text-secondary mb-3 uppercase tracking-wider">Today's Events</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="flex flex-col items-center min-w-[40px] bg-surface-dark border border-border-dark rounded p-1">
+<span class="text-[10px] text-text-secondary">09:30</span>
+<span class="text-xs font-bold text-white">AM</span>
+</div>
+<div>
+<h5 class="text-sm font-medium text-white">Non-Farm Payrolls</h5>
+<div class="flex gap-2 text-[10px] mt-1">
+<span class="text-text-secondary">USA</span>
+<span class="text-primary font-bold">High Impact</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="flex flex-col items-center min-w-[40px] bg-surface-dark border border-border-dark rounded p-1">
+<span class="text-[10px] text-text-secondary">02:00</span>
+<span class="text-xs font-bold text-white">PM</span>
+</div>
+<div>
+<h5 class="text-sm font-medium text-white">FOMC Meeting Minutes</h5>
+<div class="flex gap-2 text-[10px] mt-1">
+<span class="text-text-secondary">USA</span>
+<span class="text-red-400 font-bold">Critical</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden flex flex-col">
+<div class="flex border-b border-border-dark">
+<button class="flex-1 py-3 text-sm font-medium text-white border-b-2 border-primary bg-surface-darker">Top Gainers</button>
+<button class="flex-1 py-3 text-sm font-medium text-text-secondary hover:text-white transition-colors">Top Losers</button>
+</div>
+<div class="flex-1 p-2 flex flex-col gap-1 overflow-y-auto max-h-[300px]">
+<div class="flex items-center justify-between p-3 hover:bg-surface-darker rounded cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-darker flex items-center justify-center font-bold text-xs text-white border border-border-dark">NVDA</div>
+<div>
+<div class="text-sm font-bold text-white">NVIDIA Corp</div>
+<div class="text-xs text-text-secondary">Tech</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-bold text-primary">+4.2%</div>
+<div class="text-xs text-white">420.50</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-darker rounded cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-darker flex items-center justify-center font-bold text-xs text-white border border-border-dark">TSLA</div>
+<div>
+<div class="text-sm font-bold text-white">Tesla Inc</div>
+<div class="text-xs text-text-secondary">Auto</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-bold text-primary">+3.1%</div>
+<div class="text-xs text-white">215.30</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-darker rounded cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-darker flex items-center justify-center font-bold text-xs text-white border border-border-dark">AMD</div>
+<div>
+<div class="text-sm font-bold text-white">AMD</div>
+<div class="text-xs text-text-secondary">Tech</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-bold text-primary">+2.8%</div>
+<div class="text-xs text-white">105.12</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-darker rounded cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-darker flex items-center justify-center font-bold text-xs text-white border border-border-dark">PLTR</div>
+<div>
+<div class="text-sm font-bold text-white">Palantir</div>
+<div class="text-xs text-text-secondary">Tech</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-bold text-primary">+2.1%</div>
+<div class="text-xs text-white">18.45</div>
+</div>
+</div>
+</div>
+<div class="p-3 border-t border-border-dark text-center bg-surface-darker">
+<a class="text-xs font-bold text-primary hover:text-primary/80 uppercase tracking-wide" href="#">View Full Market Data</a>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5">
+<h3 class="font-bold text-lg text-white mb-4">Trending Topics</h3>
+<div class="flex flex-wrap gap-2">
+<a class="px-3 py-1.5 bg-background-dark border border-border-dark rounded-full text-xs font-medium text-text-secondary hover:text-white hover:border-primary hover:bg-primary/10 transition-all" href="#">#Inflation</a>
+<a class="px-3 py-1.5 bg-background-dark border border-border-dark rounded-full text-xs font-medium text-text-secondary hover:text-white hover:border-primary hover:bg-primary/10 transition-all" href="#">#CryptoBullRun</a>
+<a class="px-3 py-1.5 bg-background-dark border border-border-dark rounded-full text-xs font-medium text-text-secondary hover:text-white hover:border-primary hover:bg-primary/10 transition-all" href="#">#AI</a>
+<a class="px-3 py-1.5 bg-background-dark border border-border-dark rounded-full text-xs font-medium text-text-secondary hover:text-white hover:border-primary hover:bg-primary/10 transition-all" href="#">#EarningsSeason</a>
+<a class="px-3 py-1.5 bg-background-dark border border-border-dark rounded-full text-xs font-medium text-text-secondary hover:text-white hover:border-primary hover:bg-primary/10 transition-all" href="#">#GreenEnergy</a>
+<a class="px-3 py-1.5 bg-background-dark border border-border-dark rounded-full text-xs font-medium text-text-secondary hover:text-white hover:border-primary hover:bg-primary/10 transition-all" href="#">#HousingMarket</a>
+</div>
+</div>
+</div>
+</div>
+<div class="h-20"></div>
+</div>
+</body></html>
