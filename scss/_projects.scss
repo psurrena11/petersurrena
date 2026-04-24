@@ -8,9 +8,9 @@
 }
 
 div.project_row {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    grid-gap: v.$sp_lg;
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$sp_lg;
     
     div.project {
         display: grid;
@@ -67,7 +67,7 @@ div.project_row {
 	}
 	
 	div.project_row { 
-        grid-template-columns: 1fr;
+        flex-direction: column;
         overflow-x: auto;
      
 		div.project {
