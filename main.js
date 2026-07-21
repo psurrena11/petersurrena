@@ -1,15 +1,13 @@
 // Import main scss
 import './scss/app.scss';
 
-// Import SimppleLightbox JS
+// Import SimpleLightbox JS
 import SimpleLightbox from 'simplelightbox';
 
-// Import SimppleLightbox CSS
+// Import SimpleLightbox CSS
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-let lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   "showCounter": false,
   "overlayOpacity": 0.85
 });
-
-console.log("Have a cool summer! - Peter");

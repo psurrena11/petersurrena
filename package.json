@@ -1,7 +1,7 @@
 {
   "name": "petersurrena.com",
-  "vesion": "1.1.1",
-  "private": "true",
+  "version": "1.1.1",
+  "private": true,
   "devDependencies": {
     "glob": "^11.0.3",
     "sass": "^1.87.0",

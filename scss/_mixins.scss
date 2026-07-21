@@ -4,6 +4,14 @@
   &:hover {
     transform: scale($factor);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }
 
 @mixin fade( $time: 0.3s ) {
