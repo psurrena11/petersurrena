@@ -35,7 +35,8 @@ div.project_row {
 				
 				img {
 					width: auto;
-					max-width: v.$thumb_width;    
+					max-width: v.$thumb_width;
+					height: auto;
 				}
             } 
         }
