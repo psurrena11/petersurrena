@@ -3,55 +3,52 @@
 
 .projects {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: v.$sp_lg;
-	max-width: 1350px;
-}
+    max-width: 1350px;
 
-div.project_row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: v.$sp_lg;
-    
     div.project {
         display: grid;
         grid-template-rows: max-content max-content;
         grid-gap: 0;
 
+        &.thumb_two { grid-column: span 2; }
+        &.thumb_three { grid-column: span 3; }
+
         ul.project_thumbs {
             display: grid;
             grid-auto-flow: column;
+            grid-auto-columns: 1fr;
 
             &.outdent {
                 margin-left: -11px;
             }
 
             li {
-                display: inline-block;
                 @include m.scale;
 
                 a {
-                    text-decoration: none;                
+                    text-decoration: none;
                 }
-				
-				img {
-					width: auto;
-					max-width: v.$thumb_width;
-					height: auto;
-				}
-            } 
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
         }
 
         .project_description {
             margin: v.$sp_xsm 0 0;
-			text-align: left;
-    
+            text-align: left;
+
             p {
-				font-family: v.$serif;
+                font-family: v.$serif;
                 font-size: 0.85em;
                 line-height: 1.6;
                 margin: v.$sp_xsm 0;
-				max-width: 400px;
-				width: 100%;          
+                max-width: 400px;
+                width: 100%;
             }
 
             a.casestudy_link {
@@ -61,29 +58,43 @@ div.project_row {
     }
 }
 
+// Not enough room for 3 tracks: cap wide projects so they can't overflow
+@media only screen and (max-width: 1000px) {
+    .projects div.project.thumb_three {
+        grid-column: span 2;
+    }
+}
+
 @media only screen and (max-width: v.$bp_mobile) {
 
     .projects {
+        grid-template-columns: 1fr;
         overflow: hidden;
-	}
-	
-	div.project_row { 
-        flex-direction: column;
-        overflow-x: auto;
-     
-		div.project {
+
+        div.project {
+            grid-column: span 1;
             margin: 0 0 v.$sp_md;
-	
-			ul.project_thumbs {
+
+            &.thumb_two,
+            &.thumb_three {
+                grid-column: span 1;
+            }
+
+            ul.project_thumbs {
                 grid-auto-columns: auto;
                 column-gap: v.$sp_sm;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-				
+
                 &::-webkit-scrollbar {
                     display: none;
                 }
-			}
-		}
-	}
+
+                li img {
+                    width: auto;
+                    max-width: v.$thumb_width;
+                }
+            }
+        }
+    }
 }
